@@ -33,14 +33,15 @@ export default function ContactMap() {
       {/* Map Section */}
       <div className="mt-10 rounded-2xl bg-indigo-50 p-6 shadow-md">
         <div className="relative w-full overflow-hidden rounded-lg">
-          <img
+          <Image
             src="/images/contactus/world-map.png"
             alt="World Map"
+            width={1200}
+            height={600}
             className="w-full object-cover"
           />
         </div>
       </div>
-
       {/* Features Row */}
       <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-3">
         {features.map((feature, idx) => (
