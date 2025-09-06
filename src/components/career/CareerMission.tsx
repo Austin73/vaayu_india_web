@@ -1,5 +1,5 @@
 import React from "react";
-import { Sparkles, Snowflake, Lightbulb } from "lucide-react";
+import Image from "next/image";
 
 export default function CareerMission() {
   return (
@@ -12,20 +12,44 @@ export default function CareerMission() {
 
       <div className="grid gap-6 md:grid-cols-3">
         {/* Card 1 */}
-        <div className="flex h-60 flex-col justify-between rounded-xl bg-gradient-to-br from-yellow-50 to-white p-6 shadow-md">
-          <Sparkles className="h-8 w-8 text-yellow-600" />
+        <div className="to-secondary-100 flex h-60 flex-col justify-between rounded-xl border border-gray-200 bg-gradient-to-b from-white p-6 shadow-md">
+          <div className="bg-white-100 flex h-15 w-15 items-center justify-center rounded-full">
+            <Image
+              src="/images/career/energy_savings_leaf.svg"
+              alt="Ac Unit"
+              width={28}
+              height={28}
+              className="h-auto w-auto object-contain"
+            />
+          </div>
           <p className="font-medium text-gray-800">Reducing environmental impact</p>
         </div>
 
         {/* Card 2 */}
-        <div className="flex h-60 flex-col justify-between rounded-xl bg-gradient-to-br from-blue-50 to-white p-6 shadow-md">
-          <Snowflake className="h-8 w-8 text-blue-600" />
+        <div className="to-primary-100 flex h-60 flex-col justify-between rounded-xl border border-gray-200 bg-gradient-to-b from-white p-6 shadow-md">
+          <div className="bg-white-100 flex h-15 w-15 items-center justify-center rounded-full">
+            <Image
+              src="/images/career/ac_unit.svg"
+              alt="Ac Unit"
+              width={28}
+              height={28}
+              className="h-auto w-auto object-contain"
+            />
+          </div>
           <p className="font-medium text-gray-800">Rethinking air cooling for tomorrow</p>
         </div>
 
         {/* Card 3 */}
-        <div className="flex h-60 flex-col justify-between rounded-xl bg-gradient-to-br from-yellow-50 to-white p-6 shadow-md">
-          <Lightbulb className="h-8 w-8 text-yellow-600" />
+        <div className="to-secondary-100 flex h-60 flex-col justify-between rounded-xl border border-gray-200 bg-gradient-to-b from-white p-6 shadow-md">
+          <div className="bg-white-100 flex h-15 w-15 items-center justify-center rounded-full">
+            <Image
+              src="/images/career/emoji_objects.svg"
+              alt="Ac Unit"
+              width={28}
+              height={28}
+              className="h-auto w-auto object-contain"
+            />
+          </div>
           <p className="font-medium text-gray-800">Creating change through innovation</p>
         </div>
       </div>

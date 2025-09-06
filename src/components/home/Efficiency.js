@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Efficiency() {
+  const router = useRouter();
   return (
     <section className="px-6 py-20 md:px-12">
       <div className="mx-auto grid max-w-7xl grid-cols-2 items-center gap-10">
@@ -64,7 +66,10 @@ export default function Efficiency() {
             noticeably lower energy bills
           </p>
 
-          <button className="bg-primary rounded-full px-5 py-2 font-medium text-white transition hover:scale-105">
+          <button
+            className="bg-primary rounded-full px-5 py-2 font-medium text-white transition hover:scale-105"
+            onClick={() => router.push("/product")}
+          >
             Explore Our Products
           </button>
         </div>

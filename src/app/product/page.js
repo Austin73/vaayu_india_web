@@ -7,8 +7,6 @@ import Questions from "@/components/product/Questions";
 import Sustainable from "@/components/product/Sustainable";
 import { WHY_VAAYU_CARD_DATA } from "@/constants/homeConstants";
 
-export const metadata = { title: "Product" };
-
 export default function Product() {
   return (
     <>

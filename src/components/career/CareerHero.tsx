@@ -16,7 +16,7 @@ export default function CareerHero() {
       </p>
       <a
         href="#open-roles"
-        className="mt-6 inline-block rounded-full bg-blue-600 px-6 py-3 font-medium text-white shadow-md transition hover:bg-blue-700"
+        className="bg-primary hover:bg-primary-700 mt-6 inline-block rounded-full px-6 py-3 font-medium text-white shadow-md transition"
       >
         Explore the open positions
       </a>
