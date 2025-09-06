@@ -1,8 +1,10 @@
 "use client";
 
+import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 
 export default function Sustainable() {
+  const { openModal } = useModal();
   return (
     <section className="relative w-full bg-white py-20">
       <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
@@ -42,7 +44,12 @@ export default function Sustainable() {
             eco-efficiency in mind. From its compressor-free architecture to streamlined airflow
             design, every detail is crafted for performance and planet.
           </p>
-          <button className="border-primary text-primary hover:bg-primary-700 self-end-safe rounded-full border px-6 py-2 text-sm font-medium transition hover:text-white">
+          <button
+            className="border-primary text-primary hover:bg-primary-700 self-end-safe rounded-full border px-6 py-2 text-sm font-medium transition hover:text-white"
+            onClick={() => {
+              openModal();
+            }}
+          >
             Talk to Expert
           </button>
         </div>

@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import ProductInfoCard from "@/components/common/ProductInfoCard";
+import { useModal } from "@/hooks/useModal";
 
 export default function PowerCooling() {
+  const { openModal } = useModal();
   return (
     <section className="relative w-full bg-white py-40">
       <div className="mx-auto max-w-7xl px-6">
@@ -19,7 +20,12 @@ export default function PowerCooling() {
             </p>
           </div>
           <div className="self-end">
-            <button className="border-primary text-primary hover:bg-primary-700 rounded-full border px-6 py-2 text-sm font-medium transition hover:text-white">
+            <button
+              className="border-primary text-primary hover:bg-primary-700 rounded-full border px-6 py-2 text-sm font-medium transition hover:text-white"
+              onClick={() => {
+                openModal();
+              }}
+            >
               Book a call
             </button>
           </div>

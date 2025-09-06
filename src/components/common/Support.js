@@ -1,4 +1,9 @@
+"use client";
+
+import { useModal } from "@/hooks/useModal";
+
 export default function Support() {
+  const { openModal } = useModal();
   const cards = [
     {
       title: "Not Happy? We're Here To Fix It.",
@@ -8,6 +13,7 @@ export default function Support() {
       bg: "bg-gray-50",
       text: "text-black",
       btnStyle: "bg-primary text-white hover:bg-primary-700",
+      onClick: () => {},
     },
     {
       title: "Need Guidance? Talk To Experts",
@@ -17,6 +23,9 @@ export default function Support() {
       bg: "bg-primary-700",
       text: "text-white",
       btnStyle: "bg-white text-black hover:bg-gray-100 border border-transparent",
+      onClick: () => {
+        openModal();
+      },
     },
     {
       title: "Have A Question? Let's Get You Answers.",
@@ -26,6 +35,7 @@ export default function Support() {
       bg: "bg-gray-50",
       text: "text-black",
       btnStyle: "bg-primary text-white hover:bg-primary-700",
+      onClick: () => {},
     },
   ];
 
@@ -42,7 +52,10 @@ export default function Support() {
               <p className="text-base leading-relaxed">{card.description}</p>
             </div>
             <div className="mt-8">
-              <button className={`rounded-full px-6 py-2 text-sm font-medium ${card.btnStyle}`}>
+              <button
+                className={`rounded-full px-6 py-2 text-sm font-medium ${card.btnStyle}`}
+                onClick={card.onClick}
+              >
                 {card.button}
               </button>
             </div>

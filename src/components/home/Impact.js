@@ -8,8 +8,7 @@ export default function Impact() {
         <div className="max-w-2xl">
           <h2 className="mb-4 text-4xl leading-snug font-bold text-gray-900 md:text-5xl">
             Real Impact. <br />
-            Reliable <br />
-            Results.
+            Reliable Results.
           </h2>
           <p className="text-lg leading-relaxed text-gray-700">
             See how businesses across the globe have transformed their spaces with Vaayu Aircon’s

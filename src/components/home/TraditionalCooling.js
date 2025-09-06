@@ -29,6 +29,7 @@ export default function TraditionalCooling() {
             rightSubtitle="Regular AC"
             icon="/images/home/traditionalcooling/bolt.svg"
             iconAlt="bolt"
+            backdropBlur
           />
         </div>
 
@@ -42,6 +43,7 @@ export default function TraditionalCooling() {
             rightSubtitle="Regular AC"
             icon="/images/home/traditionalcooling/rupee.svg"
             iconAlt="rupee"
+            backdropBlur
           />
         </div>
       </div>

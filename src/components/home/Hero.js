@@ -1,6 +1,10 @@
+"use client";
+
+import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 
 export default function Hero() {
+  const { openModal } = useModal();
   return (
     <section className="relative min-h-[92vh] overflow-hidden md:min-h-screen">
       {/* Background */}
@@ -30,7 +34,12 @@ export default function Hero() {
           Efficient <span className="font-serif italic">Sustainability</span>
         </h1>
 
-        <button className="bg-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 font-semibold text-white shadow-md transition hover:shadow-lg">
+        <button
+          className="bg-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 font-semibold text-white shadow-md transition hover:shadow-lg"
+          onClick={() => {
+            openModal();
+          }}
+        >
           Book A Call With Expert
         </button>
       </div>
