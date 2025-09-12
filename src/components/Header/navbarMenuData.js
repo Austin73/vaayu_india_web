@@ -21,17 +21,17 @@ const navbarMenuData = [
     id: 4,
     title: "Media",
     newTab: false,
-    submenu: [
+   submenu: [
       {
         id: 41,
-        title: "Media 1",
+        title: "Media Awards",
         path: "/media",
         newTab: false,
       },
       {
         id: 42,
-        title: "Media2",
-        path: "/media",
+        title: "Press Release",
+        path: "/pressrelease",
         newTab: false,
       },
     ],
