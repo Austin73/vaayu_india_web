@@ -26,9 +26,10 @@ export default function Home() {
       <Partners />
       <WhyVaayu
         heading="Why Vaayu? Our Chill Changes Things."
-        description="It\'s not just about feeling cool, it\'s about protecting our world — We\'re
+        description="It's not just about feeling cool, it's about protecting our world — We're
             here to save resources and shrink our carbon footprint for generations to come."
         cardData={WHY_VAAYU_CARD_DATA}
+        animationProps={{ initial: true, whileInView: true, viewport: { once: true, amount: 0.3 } }}
       />
       <Testimonials />
       <Support />

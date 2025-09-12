@@ -3,7 +3,7 @@
 import { useModal } from "@/hooks/useModal";
 import React, { useState } from "react";
 
-const BookCallWithExpert = ({ onSubmit, className = "" }) => {
+const BookCallWithExpert = ({ onSubmit, className = "", showCloseButton }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -97,12 +97,14 @@ const BookCallWithExpert = ({ onSubmit, className = "" }) => {
     <div className={`mx-auto max-w-xl rounded-xl p-2 ${className}`}>
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-lg font-semibold text-black">Book A Call With Expert</h2>
-        <button
-          onClick={closeModal}
-          className="hover:bg-primary-700 h-8 w-8 rounded-full border border-gray-300 text-xs font-bold text-gray-600 hover:text-white"
-        >
-          ✕
-        </button>
+        {showCloseButton && (
+          <button
+            onClick={closeModal}
+            className="hover:bg-primary-700 h-8 w-8 rounded-full border border-gray-300 text-xs font-bold text-gray-600 hover:text-white"
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       <form className="flex flex-col gap-5" onSubmit={handleSubmit} noValidate>

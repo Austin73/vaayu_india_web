@@ -2,21 +2,37 @@
 
 import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const { openModal } = useModal();
+
+  const animationVariants = {
+    hidden: { x: -100, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
+  const rightAnimationVariants = {
+    hidden: { x: 100, opacity: 0 },
+    visible: { x: 0, opacity: 1 },
+  };
+
   return (
     <section className="relative min-h-[92vh] overflow-hidden md:min-h-screen">
       {/* Background */}
-      <Image
-        src="/images/hero/background.png"
-        alt="Hero Background"
-        fill
-        priority
-        className="absolute inset-0 -z-10 object-fill"
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/hero/background.png)" }}
       />
       {/* Carbon Watch (right) */}
-      <div className="absolute top-[40%] right-20 hidden -translate-y-1/2 md:block">
+      <motion.div
+        className="absolute top-[40%] right-20 hidden -translate-y-1/2 md:block"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+        variants={rightAnimationVariants}
+      >
         <Image
           src="/images/hero/carbonwatch.png"
           alt="Reduce Carbon Emission by 80%"
@@ -25,27 +41,46 @@ export default function Hero() {
           className="object-contain"
           priority
         />
-      </div>
+      </motion.div>
       {/* Headline + CTA (center) */}
-      <div className="relative mx-auto max-w-[1100px] px-4 pt-36 text-center md:pt-48 lg:pt-56">
+      <motion.div
+        className="relative mx-auto max-w-[1100px] px-4 pt-36 text-center md:pt-48 lg:pt-56"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1 }}
+        variants={animationVariants}
+      >
         <h1 className="font-500 text-[40px] leading-tight text-black sm:text-[52px] lg:text-[58px]">
           Cool Innovation
           <br />
           Efficient <span className="font-serif italic">Sustainability</span>
         </h1>
 
-        <button
-          className="bg-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 font-semibold text-white shadow-md transition hover:shadow-lg"
+        <motion.button
+          className="bg-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 font-semibold text-white shadow-md hover:shadow-lg"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          variants={animationVariants}
           onClick={() => {
             openModal();
           }}
         >
           Book A Call With Expert
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {/* Bottom Cards (frosted) */}
-      <div className="absolute bottom-6 flex h-[240px] gap-4 justify-self-center">
+      <motion.div
+        className="absolute bottom-6 flex h-[240px] gap-4 justify-self-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        variants={animationVariants}
+      >
         {/* Card 1 */}
         <div className="flex w-[610px] items-center rounded-2xl border border-white/30 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.15)] backdrop-blur-md">
           {/* Left Image */}
@@ -130,7 +165,7 @@ export default function Hero() {
             <br /> emissions by 80%.
           </p>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 
 export default function Efficiency() {
   const router = useRouter();
@@ -9,7 +10,13 @@ export default function Efficiency() {
     <section className="px-6 py-20 md:px-12">
       <div className="mx-auto grid max-w-7xl grid-cols-2 items-center gap-10">
         {/* Left Image */}
-        <div className="overflow-hidden rounded-2xl">
+        <motion.div
+          className="overflow-hidden rounded-2xl"
+          initial={{ opacity: 0, x: -100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <Image
             src="/images/home/efficiency/efficiency.png"
             alt="Vaayu Cooling System"
@@ -17,10 +24,15 @@ export default function Efficiency() {
             height={900}
             className="h-full w-full object-cover"
           />
-        </div>
+        </motion.div>
 
         {/* Right Content */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
           <h2 className="mb-3 text-3xl leading-snug font-medium text-black">
             High Cooling Efficiency, <br /> Lower Energy Bills
           </h2>
@@ -72,7 +84,7 @@ export default function Efficiency() {
           >
             Explore Our Products
           </button>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

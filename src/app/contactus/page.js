@@ -1,6 +1,6 @@
 export const metadata = { title: "Contact Us" };
 import ContactMap from "@/components/contactus/ContactMap";
-import Partners from "@/components/contactus/Partners";
+import Partners from "@/components/home/Partners";
 import CallToAction from "@/components/aboutus/CallToAction";
 import ContactAddresses from "@/components/contactus/ContactAddresses";
 import ContactIntro from "@/components/contactus/ContactIntro";

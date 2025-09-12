@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import ProductInfoCard from "@/components/common/ProductInfoCard";
+import { motion } from "framer-motion";
 
 export default function TraditionalCooling() {
   return (
@@ -9,7 +10,13 @@ export default function TraditionalCooling() {
       {/* Overlay Layer */}
       <div className="absolute inset-0 flex flex-col">
         {/* Heading & Description (Top Left) */}
-        <div className="absolute top-16 left-8 max-w-md md:top-20 md:left-16">
+        <motion.div
+          className="absolute top-16 left-8 max-w-md md:top-20 md:left-16"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <h2 className="mb-4 text-3xl leading-snug font-bold text-white md:text-4xl">
             Better Than <br /> Traditional Cooling
           </h2>
@@ -17,10 +24,16 @@ export default function TraditionalCooling() {
             Experience more savings, more efficiency, and more comfort — all with less water,
             energy, and maintenance.
           </p>
-        </div>
+        </motion.div>
 
         {/* Card Top Right */}
-        <div className="absolute top-24 right-40">
+        <motion.div
+          className="absolute top-24 right-40"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <ProductInfoCard
             title="Power Input (Watts) Per Machine"
             leftTitle="1650"
@@ -31,10 +44,16 @@ export default function TraditionalCooling() {
             iconAlt="bolt"
             backdropBlur
           />
-        </div>
+        </motion.div>
 
         {/* Card Bottom Left */}
-        <div className="absolute bottom-16 left-60">
+        <motion.div
+          className="absolute bottom-16 left-60"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
           <ProductInfoCard
             title="Monthly Bill (Approx)"
             leftTitle="3,465"
@@ -45,7 +64,7 @@ export default function TraditionalCooling() {
             iconAlt="rupee"
             backdropBlur
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const testimonials = [
@@ -24,11 +27,40 @@ export default function Testimonials() {
     },
   ];
 
+  // Animation variants
+  const headingVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+  const testimonialParent = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.18,
+      },
+    },
+  };
+  const testimonialItem = {
+    hidden: { opacity: 0, scale: 0.95 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 2, ease: "easeOut" },
+    },
+  };
+
   return (
     <section className="relative w-full bg-white px-6 py-20 md:px-12">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
-        <div className="mb-12 max-w-3xl">
+        <motion.div
+          className="mb-12 max-w-3xl"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={headingVariants}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <h2 className="mb-4 text-4xl leading-snug font-bold text-gray-900 md:text-5xl">
             What Our Clients Say
           </h2>
@@ -36,16 +68,23 @@ export default function Testimonials() {
             From manufacturing giants to educational institutions, our clients rely on Vaayu to
             deliver sustainable cooling solutions that perform.
           </p>
-        </div>
+        </motion.div>
 
         {/* Testimonials Grid Layout */}
         <div className="flex flex-col gap-12">
           {testimonials.map((t, idx) => (
-            <div key={idx} className="grid gap-6 md:grid-cols-4 md:items-stretch">
+            <motion.div
+              key={idx}
+              className="grid gap-6 md:grid-cols-4 md:items-stretch"
+              variants={testimonialParent}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.3 }}
+            >
               {idx % 2 === 0 ? (
                 <>
                   {/* Client Photo */}
-                  <div className="overflow-hidden rounded-2xl">
+                  <motion.div className="overflow-hidden rounded-2xl" variants={testimonialItem}>
                     <Image
                       src={t.clientImg}
                       alt={t.clientAlt}
@@ -53,9 +92,12 @@ export default function Testimonials() {
                       height={330}
                       className="h-full w-full object-cover"
                     />
-                  </div>
+                  </motion.div>
                   {/* Logo */}
-                  <div className="flex items-center justify-center rounded-2xl border border-gray-200 bg-white p-6">
+                  <motion.div
+                    className="flex items-center justify-center rounded-2xl border border-gray-200 bg-white p-6"
+                    variants={testimonialItem}
+                  >
                     <Image
                       src={t.logo}
                       alt={t.logoAlt}
@@ -63,24 +105,33 @@ export default function Testimonials() {
                       height={80}
                       className="h-auto w-auto object-contain"
                     />
-                  </div>
+                  </motion.div>
                   {/* Text */}
-                  <div className="flex flex-col justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6 md:col-span-2">
+                  <motion.div
+                    className="flex flex-col justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6 md:col-span-2"
+                    variants={testimonialItem}
+                  >
                     <h3 className="mb-3 text-base font-bold text-gray-900">{t.title}</h3>
                     <p className="mb-4 text-gray-700">&quot;{t.quote}&quot;</p>
                     <p className="text-sm font-semibold text-gray-900">{t.author}</p>
-                  </div>
+                  </motion.div>
                 </>
               ) : (
                 <>
                   {/* Text */}
-                  <div className="flex flex-col justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6 md:col-span-2">
+                  <motion.div
+                    className="flex flex-col justify-center rounded-2xl border border-gray-200 bg-gray-50 p-6 md:col-span-2"
+                    variants={testimonialItem}
+                  >
                     <h3 className="mb-3 text-base font-bold text-gray-900">{t.title}</h3>
                     <p className="mb-4 text-gray-700">&quot;{t.quote}&quot;</p>
                     <p className="text-sm font-semibold text-gray-900">{t.author}</p>
-                  </div>
+                  </motion.div>
                   {/* Logo */}
-                  <div className="flex items-center justify-center rounded-2xl border border-gray-200 bg-white p-6">
+                  <motion.div
+                    className="flex items-center justify-center rounded-2xl border border-gray-200 bg-white p-6"
+                    variants={testimonialItem}
+                  >
                     <Image
                       src={t.logo}
                       alt={t.logoAlt}
@@ -88,9 +139,9 @@ export default function Testimonials() {
                       height={80}
                       className="h-auto w-auto object-contain"
                     />
-                  </div>
+                  </motion.div>
                   {/* Client Photo */}
-                  <div className="overflow-hidden rounded-2xl">
+                  <motion.div className="overflow-hidden rounded-2xl" variants={testimonialItem}>
                     <Image
                       src={t.clientImg}
                       alt={t.clientAlt}
@@ -98,10 +149,10 @@ export default function Testimonials() {
                       height={330}
                       className="h-full w-full object-cover"
                     />
-                  </div>
+                  </motion.div>
                 </>
               )}
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
