@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import ProductInfoCard from "@/components/common/ProductInfoCard";
 import { motion } from "framer-motion";
 
@@ -11,7 +10,7 @@ export default function TraditionalCooling() {
       <div className="absolute inset-0 flex flex-col">
         {/* Heading & Description (Top Left) */}
         <motion.div
-          className="absolute top-16 left-8 max-w-md md:top-20 md:left-16"
+          className="m-2 md:absolute md:top-20 md:left-16 md:max-w-md"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -28,7 +27,7 @@ export default function TraditionalCooling() {
 
         {/* Card Top Right */}
         <motion.div
-          className="absolute top-24 right-40"
+          className="m-2 md:absolute md:top-24 md:right-40"
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -48,7 +47,7 @@ export default function TraditionalCooling() {
 
         {/* Card Bottom Left */}
         <motion.div
-          className="absolute bottom-16 left-60"
+          className="m-2 md:absolute md:bottom-16 md:left-60"
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.3 }}

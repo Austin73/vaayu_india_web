@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Advantages() {
   const advantages = [
@@ -38,7 +38,17 @@ export default function Advantages() {
     },
   ];
 
-  const [expandedIndexes, setExpandedIndexes] = useState([]);
+  const [revealedIndex, setRevealedIndex] = useState(null); // controls overlay reveal
+  const [expandedIndex, setExpandedIndex] = useState(null); // controls full description
+
+  const handleRevealClick = (index) => {
+    setRevealedIndex((prev) => (prev === index ? null : index));
+  };
+
+  const handleReadMoreClick = (index, e) => {
+    e.stopPropagation(); // prevent overlay toggle
+    setExpandedIndex((prev) => (prev === index ? null : index));
+  };
 
   return (
     <section className="bg-white px-6 py-20 md:px-12">
@@ -49,53 +59,50 @@ export default function Advantages() {
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
         {advantages.map((adv, index) => {
+          const isRevealed = revealedIndex === index;
+          const isExpanded = expandedIndex === index;
+
           return (
             <motion.div
               key={index}
               className="relative cursor-pointer overflow-hidden rounded-lg bg-white"
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
+              onClick={() => handleRevealClick(index)}
             >
-              <Image
-                src={adv.image}
-                alt={adv.title}
-                width={500}
-                height={350}
-                className="mb-4 w-full object-cover"
-                priority={true}
-              />
-              {/* Overlay with title - visible initially */}
+              {/* Overlay covering the entire card */}
               <motion.div
-                className="bg-opacity-50 pointer-events-none absolute inset-0 flex items-center justify-center bg-black p-4"
-                variants={{
-                  rest: { opacity: 0.95 },
-                  hover: { opacity: 0, transition: { duration: 0.4 } },
+                className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-lg bg-black"
+                initial={{ clipPath: "circle(100% at 50% 50%)", opacity: 0.95 }}
+                animate={{
+                  clipPath: isRevealed ? "circle(0% at 50% 50%)" : "circle(100% at 50% 50%)",
+                  opacity: isRevealed ? 0 : 0.95,
                 }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
               >
-                <h3 className="text-center text-lg font-bold text-white">{adv.title}</h3>
+                <h3 className="px-4 text-center text-lg font-bold text-white">{adv.title}</h3>
               </motion.div>
 
-              {/* Card content - image already rendered above, content below */}
-              <div className="p-6">
+              {/* Card content */}
+              <div className="relative z-0 p-6">
+                <Image
+                  src={adv.image}
+                  alt={adv.title}
+                  width={500}
+                  height={350}
+                  className="mb-4 w-full object-cover"
+                  priority
+                />
                 <h3 className="mb-2 text-base leading-snug font-bold text-black underline">
                   {adv.title}
                 </h3>
                 <div className="text-justify text-sm leading-relaxed text-black">
-                  {expandedIndexes.includes(index)
-                    ? adv.desc
-                    : adv.desc.split(" ").slice(0, 16).join(" ") + "..."}
+                  {isExpanded ? adv.desc : adv.desc.split(" ").slice(0, 16).join(" ")}
+                  {!isExpanded && "..."}
                   <button
                     type="button"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setExpandedIndexes((prev) =>
-                        prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-                      );
-                    }}
+                    onClick={(e) => handleReadMoreClick(index, e)}
                     className="ml-1 text-gray-600 underline hover:text-gray-800"
                   >
-                    {expandedIndexes.includes(index) ? "read less" : "read more"}
+                    {isExpanded ? "read less" : "read more"}
                   </button>
                 </div>
               </div>

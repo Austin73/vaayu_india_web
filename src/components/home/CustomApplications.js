@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CustomApplications() {
   return (
-    <section className="bg-white px-6 py-20 md:px-12">
+    <section className="bg-white px-6 py-16 sm:py-20 md:px-12">
       <div className="mx-auto flex max-w-6xl flex-col">
         {/* Left Content */}
         <motion.div
@@ -14,7 +14,7 @@ export default function CustomApplications() {
           transition={{ type: "spring", stiffness: 50, damping: 20 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="mb-2 text-4xl leading-snug font-medium text-black">
+          <h2 className="mb-10 text-3xl leading-snug font-medium text-black sm:text-4xl md:text-5xl">
             One Product. Customized <br /> For Hundreds Of <br /> Applications.
           </h2>
         </motion.div>
@@ -30,7 +30,7 @@ export default function CustomApplications() {
         >
           {/* Airflow gradient behind the image */}
           <div
-            className="absolute -top-10 -left-10 h-[470px] w-[520px] rounded-full"
+            className="absolute -top-10 -left-10 h-[300px] w-[320px] rounded-full sm:h-[400px] sm:w-[450px] md:h-[470px] md:w-[520px]"
             style={{
               background:
                 "radial-gradient(ellipse at center, rgba(0,123,255,0.15), transparent 70%)",
@@ -53,24 +53,25 @@ export default function CustomApplications() {
               alt="Vaayu Product"
               width={500}
               height={450}
-              className="object-contain"
+              className="object-contain sm:h-[360px] sm:w-[400px] md:h-[450px] md:w-[500px]"
             />
           </motion.div>
         </motion.div>
+
         <motion.div
-          className="flex justify-between"
+          className="mt-8 flex flex-col justify-between sm:flex-row"
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="mt-8 max-w-lg text-justify text-lg leading-relaxed text-black">
+          <p className="max-w-full text-justify text-base leading-relaxed text-black sm:max-w-lg sm:text-lg">
             Vaayu effortlessly fits into variegated settings where air quality and sustainability
             are of utmost importance, ranging from food processing facilities and textile
             manufacturing plants to coaching centers and hospitality venues. Simply, easy to buy!
           </p>
           <motion.div
-            className="mt-6 self-end"
+            className="mt-6 self-start sm:mt-0 sm:self-end"
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
           >

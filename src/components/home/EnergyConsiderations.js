@@ -41,10 +41,10 @@ export default function EnergyConsiderations() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="line- relative z-10 text-5xl font-[500] text-black">
+          <h2 className="line- relative z-10 text-3xl font-[500] text-black md:text-5xl">
             Elevated Cooling <br /> Energy Considerations
           </h2>
-          <div className="relative mt-6 h-[400px] w-[500px]">
+          <div className="relative mt-6 h-auto w-full max-w-[500px] md:h-[400px]">
             {/* Airflow animated gradient behind the image */}
             <motion.div
               className="absolute inset-0 -z-10 rounded-lg"
@@ -69,14 +69,14 @@ export default function EnergyConsiderations() {
               initial={{ y: 0 }}
               whileInView="animate"
               viewport={{ once: true, amount: 0.3 }}
-              className="h-full w-full"
+              className="h-auto w-full md:h-full"
             >
               <Image
                 src="/images/home/cooler.png"
                 alt="Cooling System"
                 width={500}
                 height={400}
-                className="rounded-lg"
+                className="h-auto w-full rounded-lg object-cover md:h-full"
               />
             </motion.div>
           </div>
@@ -97,7 +97,7 @@ export default function EnergyConsiderations() {
             units, archival rooms, and other public as well as private spaces.
           </p>
           <motion.button
-            className="bg-primary w-36 rounded-full px-6 py-2 text-sm text-white transition"
+            className="bg-primary w-full max-w-[144px] rounded-full px-6 py-2 text-sm text-white transition md:w-36"
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
