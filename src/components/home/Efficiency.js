@@ -21,8 +21,8 @@ export default function Efficiency() {
             src="/images/home/efficiency/efficiency.png"
             alt="Vaayu Cooling System"
             width={525}
-            height={900}
-            className="h-full w-full object-cover"
+            height={700}
+            className="h-full w-full object-contain"
           />
         </motion.div>
 
@@ -33,46 +33,46 @@ export default function Efficiency() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <h2 className="mb-3 text-3xl leading-snug font-medium text-black">
+          <h2 className="mb-3 text-4xl leading-snug font-medium text-black">
             High Cooling Efficiency, <br /> Lower Energy Bills
           </h2>
-          <p className="mb-3 text-base leading-relaxed text-black">
+          <p className="mb-10 text-justify text-2xl leading-snug text-black">
             Experience superior comfort with Vaayu Aircon, your specialist in high-efficiency
             cooling solutions. Our advanced technology, centered around innovative Air Handling
             Units (AHUs) and Air Washers, delivers powerful cooling while significantly reducing
             power consumption.
           </p>
 
-          <p className="mb-3 text-lg font-bold text-black">Our product range includes:</p>
+          <p className="mb-3 text-2xl leading-relaxed text-black">Our product range includes:</p>
 
-          <ul className="mb-6 space-y-4">
+          <ul className="mb-6 space-y-10">
             <li className="border-b border-gray-200 pb-2">
-              <p className="font-semibold text-black">Single Stage Evaporative Cooling</p>
-              <p className="text-xs text-black">For reliable and cost-effective performance.</p>
+              <p className="text-lg font-bold text-black">Single Stage Evaporative Cooling</p>
+              <p className="text-sm text-black">For reliable and cost-effective performance.</p>
             </li>
             <li className="border-b border-gray-200 pb-3">
-              <p className="font-semibold text-black">Dual Stage Evaporative Cooling</p>
-              <p className="text-xs text-black">
+              <p className="text-lg font-bold text-black">Dual Stage Evaporative Cooling</p>
+              <p className="text-sm text-black">
                 Offering maximum cooling efficiency and enhanced comfort.
               </p>
             </li>
             <li className="border-b border-gray-200 pb-3">
-              <p className="font-semibold text-black">Hybrid Air Washer</p>
-              <p className="text-xs text-black">
+              <p className="text-lg font-bold text-black">Hybrid Air Washer</p>
+              <p className="text-sm text-black">
                 A state-of-the-art system combining technologies for optimal performance.
               </p>
             </li>
             <li className="border-b border-gray-200 pb-3">
-              <p className="font-semibold text-black">
+              <p className="text-lg font-bold text-black">
                 Treated Fresh Air (TFAs) &amp; Fresh Air Handling Units (FAHUs)
               </p>
-              <p className="text-xs text-black">
+              <p className="text-sm text-black">
                 Designed to deliver 100% fresh, clean, and cool air.
               </p>
             </li>
           </ul>
 
-          <p className="mb-4 text-sm leading-none text-black">
+          <p className="mb-4 text-justify text-sm leading-normal text-black">
             By leveraging these systems, you can enjoy a perfectly cool environment without worrying
             about high electricity costs. Choose Vaayu Aircon for smarter cooling and enjoy
             noticeably lower energy bills

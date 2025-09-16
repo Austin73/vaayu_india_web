@@ -20,7 +20,7 @@ export default function TraditionalCooling() {
           <h2 className="mb-4 text-3xl leading-snug font-bold text-white md:text-4xl">
             Better Than <br /> Traditional Cooling
           </h2>
-          <p className="text-base leading-relaxed text-white/90">
+          <p className="text-justify text-base leading-relaxed text-white/90">
             Experience more savings, more efficiency, and more comfort — all with less water,
             energy, and maintenance.
           </p>

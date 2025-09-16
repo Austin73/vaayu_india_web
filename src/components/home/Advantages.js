@@ -1,6 +1,8 @@
 "use client";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Advantages() {
   const advantages = [
@@ -36,6 +38,8 @@ export default function Advantages() {
     },
   ];
 
+  const [expandedIndexes, setExpandedIndexes] = useState([]);
+
   return (
     <section className="bg-white px-6 py-20 md:px-12">
       <div className="mx-auto mb-12 max-w-6xl">
@@ -44,47 +48,60 @@ export default function Advantages() {
       </div>
 
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
-        {advantages.map((adv, index) => (
-          <motion.div
-            key={index}
-            className="relative cursor-pointer overflow-hidden rounded-lg bg-white"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <Image
-              src={adv.image}
-              alt={adv.title}
-              width={500}
-              height={350}
-              className="mb-4 w-full object-cover"
-              priority={true}
-            />
-            {/* Overlay with title - visible initially */}
+        {advantages.map((adv, index) => {
+          return (
             <motion.div
-              className="bg-opacity-50 absolute inset-0 flex items-center justify-center bg-black p-4"
-              variants={{
-                rest: { opacity: 0.95 },
-                hover: { opacity: 0, transition: { duration: 0.4 } },
-              }}
+              key={index}
+              className="relative cursor-pointer overflow-hidden rounded-lg bg-white"
+              initial="rest"
+              whileHover="hover"
+              animate="rest"
             >
-              <h3 className="text-center text-lg font-bold text-white">{adv.title}</h3>
-            </motion.div>
+              <Image
+                src={adv.image}
+                alt={adv.title}
+                width={500}
+                height={350}
+                className="mb-4 w-full object-cover"
+                priority={true}
+              />
+              {/* Overlay with title - visible initially */}
+              <motion.div
+                className="bg-opacity-50 pointer-events-none absolute inset-0 flex items-center justify-center bg-black p-4"
+                variants={{
+                  rest: { opacity: 0.95 },
+                  hover: { opacity: 0, transition: { duration: 0.4 } },
+                }}
+              >
+                <h3 className="text-center text-lg font-bold text-white">{adv.title}</h3>
+              </motion.div>
 
-            {/* Card content - image already rendered above, content below */}
-            <div className="p-6">
-              <h3 className="mb-2 text-base leading-snug font-bold text-black underline">
-                {adv.title}
-              </h3>
-              <p className="text-sm leading-relaxed text-black">
-                {adv.desc}
-                <a href="#" className="text-gray-600 underline hover:text-gray-800">
-                  read more.
-                </a>
-              </p>
-            </div>
-          </motion.div>
-        ))}
+              {/* Card content - image already rendered above, content below */}
+              <div className="p-6">
+                <h3 className="mb-2 text-base leading-snug font-bold text-black underline">
+                  {adv.title}
+                </h3>
+                <div className="text-justify text-sm leading-relaxed text-black">
+                  {expandedIndexes.includes(index)
+                    ? adv.desc
+                    : adv.desc.split(" ").slice(0, 16).join(" ") + "..."}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setExpandedIndexes((prev) =>
+                        prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+                      );
+                    }}
+                    className="ml-1 text-gray-600 underline hover:text-gray-800"
+                  >
+                    {expandedIndexes.includes(index) ? "read less" : "read more"}
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

@@ -64,7 +64,7 @@ export default function CustomApplications() {
           transition={{ delay: 0.5, duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="mt-8 max-w-lg text-lg leading-relaxed text-black">
+          <p className="mt-8 max-w-lg text-justify text-lg leading-relaxed text-black">
             Vaayu effortlessly fits into variegated settings where air quality and sustainability
             are of utmost importance, ranging from food processing facilities and textile
             manufacturing plants to coaching centers and hospitality venues. Simply, easy to buy!

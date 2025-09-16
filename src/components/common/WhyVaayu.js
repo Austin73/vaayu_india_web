@@ -52,7 +52,9 @@ export default function WhyVaayu(props) {
           viewport={{ once: true, amount: 0.3 }}
         >
           <h2 className="mb-4 text-4xl leading-snug font-bold text-white md:text-5xl">{heading}</h2>
-          {description && <p className="text-lg leading-relaxed text-white/90">{description}</p>}
+          {description && (
+            <p className="text-justify text-lg leading-relaxed text-white/90">{description}</p>
+          )}
         </motion.div>
 
         {/* Features Grid */}
@@ -85,7 +87,7 @@ export default function WhyVaayu(props) {
                   />
                 </div>
                 <h3 className="mb-2 text-lg font-bold">{data.title}</h3>
-                <p className="text-sm text-white/80">{data.subtitle}</p>
+                <p className="text-justify text-sm text-white/80">{data.subtitle}</p>
               </motion.div>
             );
           })}

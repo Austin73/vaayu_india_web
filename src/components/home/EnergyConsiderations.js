@@ -31,7 +31,7 @@ export default function EnergyConsiderations() {
   };
 
   return (
-    <section className="bg-[#FFFCF5] px-6 py-20 md:px-12">
+    <section className="bg-white px-6 py-20 md:px-12">
       <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 md:grid-cols-2">
         {/* Left side: Heading + Image */}
         <motion.div
@@ -90,7 +90,7 @@ export default function EnergyConsiderations() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="mb-6 text-xl leading-relaxed text-black">
+          <p className="mb-6 text-justify text-xl leading-relaxed text-black">
             At Vaayu Aircool, we create fresh air-based cooling systems that strike a balance
             between environmental responsibility, energy efficiency, and performance. Our innovative
             technology is revolutionizing what it means to effectively cool data centers, industrial

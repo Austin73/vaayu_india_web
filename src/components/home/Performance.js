@@ -17,7 +17,7 @@ export default function Performance() {
             <h2 className="mb-4 text-4xl leading-snug font-medium text-black">
               Performance &amp; <br /> Sustainability
             </h2>
-            <p className="text-lg leading-relaxed text-black">
+            <p className="text-justify text-lg leading-relaxed text-black">
               Vaayu Aircon delivers high-performance cooling engineered for exceptional energy
               efficiency. This ensures optimal comfort while significantly reducing electricity
               consumption. Committed to sustainability, the systems utilize eco-friendly
@@ -35,8 +35,11 @@ export default function Performance() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <div className="flex h-full w-full items-end justify-start pb-3">
-              <span className="text-[200px] leading-none font-[900] text-white">15</span>
-              <span className="mb-3 ml-2 text-xl font-bold text-white">Years Of Innovation</span>
+              <span className="text-[220px] leading-none font-[900] text-white">15</span>
+              <span className="mb-36 ml-2 text-xl font-bold text-white">
+                Years Of <br />
+                Innovation
+              </span>
             </div>
           </motion.div>
         </div>

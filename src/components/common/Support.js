@@ -86,7 +86,7 @@ export default function Support() {
           >
             <div>
               <h3 className="mb-4 text-2xl leading-snug font-bold">{card.title}</h3>
-              <p className="text-base leading-relaxed">{card.description}</p>
+              <p className="text-justify text-base leading-relaxed">{card.description}</p>
             </div>
             <div className="mt-8">
               <button

@@ -64,7 +64,7 @@ export default function Testimonials() {
           <h2 className="mb-4 text-4xl leading-snug font-bold text-gray-900 md:text-5xl">
             What Our Clients Say
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className="text-justify text-lg leading-relaxed text-gray-700">
             From manufacturing giants to educational institutions, our clients rely on Vaayu to
             deliver sustainable cooling solutions that perform.
           </p>
@@ -112,7 +112,7 @@ export default function Testimonials() {
                     variants={testimonialItem}
                   >
                     <h3 className="mb-3 text-base font-bold text-gray-900">{t.title}</h3>
-                    <p className="mb-4 text-gray-700">&quot;{t.quote}&quot;</p>
+                    <p className="mb-4 text-justify text-gray-700">&quot;{t.quote}&quot;</p>
                     <p className="text-sm font-semibold text-gray-900">{t.author}</p>
                   </motion.div>
                 </>
@@ -124,7 +124,7 @@ export default function Testimonials() {
                     variants={testimonialItem}
                   >
                     <h3 className="mb-3 text-base font-bold text-gray-900">{t.title}</h3>
-                    <p className="mb-4 text-gray-700">&quot;{t.quote}&quot;</p>
+                    <p className="mb-4 text-justify text-gray-700">&quot;{t.quote}&quot;</p>
                     <p className="text-sm font-semibold text-gray-900">{t.author}</p>
                   </motion.div>
                   {/* Logo */}

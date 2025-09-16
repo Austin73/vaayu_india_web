@@ -19,7 +19,7 @@ export default function Impact() {
             Real Impact. <br />
             Reliable Results.
           </h2>
-          <p className="text-lg leading-relaxed text-gray-700">
+          <p className="text-justify text-lg leading-relaxed text-gray-700">
             See how businesses across the globe have transformed their spaces with Vaayu Aircon’s
             sustainable cooling solutions.
           </p>

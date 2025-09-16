@@ -48,7 +48,7 @@ export default function Partners() {
         {/* Heading */}
         <div className="mb-12 max-w-3xl px-6 md:px-20">
           <h2 className="mb-4 text-4xl leading-snug font-medium text-black">The A-List Of Cool.</h2>
-          <p className="text-lg leading-relaxed text-black">
+          <p className="text-justify text-lg leading-relaxed text-black">
             From agile innovators to market leaders, our partners have one thing in common: a
             commitment to a better-cooled future for everyone, everywhere.
           </p>
