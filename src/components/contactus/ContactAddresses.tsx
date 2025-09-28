@@ -33,7 +33,7 @@ export default function ContactAddresses() {
           <div>
             <h3 className="sr-only">Contact</h3>
             <p className="text-gray-600">
-              Call Us At: <span className="font-medium">+91-XXXXXXXXXX</span>
+              Call Us At: <span className="font-medium">+91-9685090174</span>
             </p>
             <p className="text-gray-600">
               Mon—Sat: <span className="font-medium">10 AM — 6 PM IST</span>
