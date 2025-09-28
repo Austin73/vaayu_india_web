@@ -12,7 +12,7 @@ export default function Testimonials() {
       logoAlt: "Sooch Group",
       title: "Educational Institution",
       quote:
-        "We were struggling with high temperatures and rising electricity bills in our classrooms. After switching to Vaayu, not only did the rooms stay consistently cool, but we also saw a significant drop in energy costs. The installation was smooth, and the air feels noticeably fresher. It’s the smartest upgrade we’ve made.",
+        "We recently had a new air conditioning system installed by Vaayu Aircon, and the experience was fantastic from start to finish. The team was professional, punctual, and incredibly knowledgeable. They helped us choose the perfect unit for our home, and the installation was seamless. We've been enjoying a cool and comfortable home ever since, and we've already noticed a difference in our energy bills. Highly recommended!.",
       author: "— Principal, Saraswati Coaching Institute",
     },
     {
@@ -22,7 +22,7 @@ export default function Testimonials() {
       logoAlt: "PMC Valley",
       title: "Industrial Client",
       quote:
-        "Our manufacturing unit required a cooling system that could run reliably without constant maintenance. Vaayu delivered exactly that — efficient cooling, low water usage, and almost zero downtime. It's built to last, and it shows.",
+        "Our manufacturing facility had been struggling with cooling with humidity issues for a while. We reached out to Vaayu Aircon for their expertise in fresh air cooling and hybrid evaporative cooling. Their team designed and implemented a custom solution that has completely transformed our workspace. The air quality has improved dramatically, creating a safer and more productive environment for our employees. Their technical know-how and commitment to quality are truly impressive.",
       author: "— Operations Head, JVS Textiles Pvt. Ltd.",
     },
   ];
