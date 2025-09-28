@@ -70,7 +70,7 @@ export default function Features() {
           {/* Product Image */}
           <div className="flex justify-center">
             <Image
-              src="/images/product/featuresbackground.png"
+              src="/images/home/cooler.png"
               alt="Vaayu Feature Machine"
               width={600}
               height={500}

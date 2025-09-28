@@ -17,7 +17,7 @@ export default function Sustainable() {
         <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           <div className="rounded-2xl">
             <Image
-              src="/images/product/sustainableleft.png"
+              src="/images/home/cooler.png"
               alt="Vaayu Hybrid Aircooling Machine"
               width={600}
               height={500}

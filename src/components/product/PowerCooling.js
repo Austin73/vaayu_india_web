@@ -32,7 +32,7 @@ export default function PowerCooling() {
         </div>
 
         {/* Product image with overlays */}
-        <div className="relative mt-12 flex h-screen w-full justify-center bg-[url('/images/product/powercooling.png')] bg-contain bg-center bg-no-repeat">
+        <div className="relative mt-12 flex h-screen w-full justify-center bg-[url('/images/home/cooler.png')] bg-contain bg-center bg-no-repeat">
           {/* Left overlay - positioned relative to the image container using percentages for stable alignment */}
           <div className="absolute top-18 left-4">
             <ProductInfoCard
