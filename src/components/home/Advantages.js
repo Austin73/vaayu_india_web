@@ -8,7 +8,7 @@ export default function Advantages() {
   const advantages = [
     {
       image: "/images/home/advantages/advantage1.png",
-      title: "Shudh Vaayu Technology For Pure, Fresh Air Circulation",
+      title: "Vaayu Technology for Pure, Fresh Air Circulation",
       desc: "Experience truly fresh air with every breath. Unlike commercial ACs that simply recirculate stale indoor air, our Shudh Vaayu technology ensures a constant supply of purified, outdoor air, filtered and cooled for your comfort. This not only improves air quality but also promotes a healthier indoor environment for you and your loved ones.",
     },
     {
