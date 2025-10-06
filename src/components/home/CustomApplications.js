@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function CustomApplications() {
+  const router = useRouter();
+
   return (
     <section className="bg-white px-6 py-16 sm:py-20 md:px-12">
       <div className="mx-auto flex max-w-6xl flex-col">
@@ -75,7 +78,10 @@ export default function CustomApplications() {
             whileHover={{ scale: 1.1 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
-            <button className="bg-primary rounded-full px-6 py-2 text-white transition hover:scale-105">
+            <button
+              className="bg-primary rounded-full px-6 py-2 text-white transition hover:scale-105"
+              onClick={() => router.push("/product")}
+            >
               Explore Applications
             </button>
           </motion.div>

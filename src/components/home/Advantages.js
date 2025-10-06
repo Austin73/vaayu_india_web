@@ -66,10 +66,13 @@ export default function Advantages() {
             <motion.div
               key={index}
               className="relative cursor-pointer overflow-hidden rounded-lg bg-white"
-              onClick={() => handleRevealClick(index)}
+              onClick={(e) => {
+                handleRevealClick(index);
+                handleReadMoreClick(index, e);
+              }}
             >
               {/* Overlay covering the entire card */}
-              <motion.div
+              {/* <motion.div
                 className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-lg bg-black"
                 initial={{ clipPath: "circle(100% at 50% 50%)", opacity: 0.95 }}
                 animate={{
@@ -79,7 +82,7 @@ export default function Advantages() {
                 transition={{ duration: 0.6, ease: "easeInOut" }}
               >
                 <h3 className="px-4 text-center text-lg font-bold text-white">{adv.title}</h3>
-              </motion.div>
+              </motion.div> */}
 
               {/* Card content */}
               <div className="relative z-0 p-6">

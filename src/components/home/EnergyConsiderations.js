@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function EnergyConsiderations() {
+  const router = useRouter();
   const leftVariants = {
     hidden: { opacity: 0, x: -50 },
     visible: { opacity: 1, x: 0, transition: { duration: 0.8 } },
@@ -102,6 +104,7 @@ export default function EnergyConsiderations() {
             initial="hidden"
             animate="visible"
             whileHover="hover"
+            onClick={() => router.push("/product")}
           >
             Know More
           </motion.button>

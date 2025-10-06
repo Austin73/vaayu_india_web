@@ -1,45 +1,9 @@
 "use client";
 
-import { useModal } from "@/hooks/useModal";
 import { motion } from "framer-motion";
 
-export default function Support() {
-  const { openModal } = useModal();
-  const cards = [
-    {
-      title: "Not Happy? We're Here To Fix It.",
-      description:
-        "Let us know what went wrong — our support team is ready to resolve your issue quickly and fairly.",
-      button: "Report a Problem",
-      bg: "bg-gray-50",
-      text: "text-black",
-      btnStyle: "bg-primary text-white hover:bg-primary-700",
-      onClick: () => {},
-    },
-    {
-      title: "Need Guidance? Talk To Experts",
-      description:
-        "Our experts are here to help you choose the right system, solve technical questions, or customize a solution for your space.",
-      button: "Speak to an Expert",
-      bg: "bg-primary-700",
-      text: "text-white",
-      btnStyle: "bg-white text-black hover:bg-gray-200 border border-transparent",
-      onClick: () => {
-        openModal();
-      },
-    },
-    {
-      title: "Have A Question? Let's Get You Answers.",
-      description:
-        "Whether you're curious about pricing, installation, or compatibility — we're just one form away.",
-      button: "Submit Your Query",
-      bg: "bg-gray-50",
-      text: "text-black",
-      btnStyle: "bg-primary text-white hover:bg-primary-700",
-      onClick: () => {},
-    },
-  ];
-
+export default function Support(props) {
+  const { cardsData } = props;
   const containerVariants = {
     hidden: {},
     visible: {
@@ -77,7 +41,7 @@ export default function Support() {
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
       >
-        {cards.map((card, idx) => (
+        {cardsData.map((card, idx) => (
           <motion.div
             key={idx}
             className={`flex flex-col justify-between rounded-2xl ${card.bg} ${card.text} min-h-[450px] border border-gray-200 p-8 shadow-sm`}

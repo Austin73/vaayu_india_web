@@ -1,8 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Footer() {
+  const router = useRouter();
+
   const certificationImages = [
     {
       id: "1",
@@ -91,7 +94,7 @@ export default function Footer() {
           <div className="mb-3 font-bold text-gray-300">Plan</div>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/product" className="text-white hover:text-gray-200">
                 Products
               </a>
             </li>
@@ -112,17 +115,17 @@ export default function Footer() {
           <div className="mb-3 font-bold text-gray-300">Help</div>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/contactus" className="text-white hover:text-gray-200">
                 Customer Support
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/career" className="text-white hover:text-gray-200">
                 Career Support
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/contactus" className="text-white hover:text-gray-200">
                 Contact Us
               </a>
             </li>
@@ -133,12 +136,12 @@ export default function Footer() {
           <div className="mb-3 font-bold text-gray-300">Media</div>
           <ul className="space-y-2">
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/media" className="text-white hover:text-gray-200">
                 Awards & Recognition
               </a>
             </li>
             <li>
-              <a href="#" className="text-white hover:text-gray-200">
+              <a href="/pressrelease" className="text-white hover:text-gray-200">
                 Press Release
               </a>
             </li>
@@ -150,9 +153,10 @@ export default function Footer() {
           <div className="mb-3 text-white">
             International Office:
             <br />
-            503, Apollo Premiere,
+            Luniya Compound, Vaayu Global Tower,
+            <br /> behind Tata Showroom, Lasudia
             <br />
-            Vijay Nagar, Indore, MP, India
+            Mori, Indore, Madhya Pradesh 452010          
           </div>
           <div className="mb-3 text-white">
             Experience Zone:FH-196,
@@ -168,7 +172,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 pt-8 text-sm md:flex-row">
         {/* Left: Copyright */}
         <div className="text-white">
-          © {new Date().getFullYear()} Vaayu India. All rights reserved.
+          © {new Date().getFullYear()} Vaayu Aircool. All rights reserved.
         </div>
         {/* Center: Links */}
         <div className="flex gap-6">
@@ -184,7 +188,13 @@ export default function Footer() {
         </div>
         {/* Right: Social Icons */}
         <div className="flex gap-4">
-          <a href="#" aria-label="Instagram" className="hover:text-white">
+          <a
+            href="https://www.instagram.com/vaayu_aircon?igsh=MWljN3NnbmE3ZWs0ZQ==&utm_source=ig_contact_invite"
+            aria-label="Instagram"
+            className="hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/social/instagram.svg"
               alt="Instagram"
@@ -193,7 +203,13 @@ export default function Footer() {
               height={42}
             />
           </a>
-          <a href="#" aria-label="LinkedIn" className="hover:text-white">
+          <a
+            href="https://www.linkedin.com/company/vaayu-aircon/"
+            aria-label="LinkedIn"
+            className="hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Image
               src="/images/social/linkedin.svg"
               alt="Linkedin"

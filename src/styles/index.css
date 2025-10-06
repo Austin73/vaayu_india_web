@@ -124,4 +124,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide scrollbars but allow scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
 

@@ -192,7 +192,16 @@ export default function Header() {
             )}
           </nav>
           <div>
-            <button className="bg-primary cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105">
+            <button
+              className="bg-primary cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105"
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href =
+                  "https://drive.google.com/uc?export=download&id=1GjHzSiys6djNiBCFuO2n0W86IqdKwi17";
+                link.download = "Vaayu_Brochure.pdf";
+                link.click();
+              }}
+            >
               Download Brochure
             </button>
           </div>
@@ -262,7 +271,14 @@ export default function Header() {
             )}
             <button
               className="bg-primary mt-2 cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={() => {
+                const link = document.createElement("a");
+                link.href =
+                  "https://drive.google.com/uc?export=download&id=1GjHzSiys6djNiBCFuO2n0W86IqdKwi17";
+                link.download = "Vaayu_Brochure.pdf";
+                link.click();
+                setMobileMenuOpen(false);
+              }}
             >
               Download Brochure
             </button>

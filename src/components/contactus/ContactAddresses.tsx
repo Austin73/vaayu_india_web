@@ -8,10 +8,12 @@ export default function ContactAddresses() {
         <div className="space-y-6">
           <div>
             <h3 className="font-semibold text-gray-800">International Office:</h3>
-            <p className="text-gray-600">
-              503, Apollo Premiere, <br />
-              Vijay Nagar, Indore, MP, India
-            </p>
+             <p className="text-gray-600">
+              Luniya Compound, Vaayu Global Tower,
+              <br /> behind Tata Showroom, Lasudia
+              <br />
+              Mori, Indore, Madhya Pradesh 452010
+            </p>       
           </div>
 
           <div>
