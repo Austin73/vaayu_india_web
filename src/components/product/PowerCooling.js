@@ -3,7 +3,8 @@
 import ProductInfoCard from "@/components/common/ProductInfoCard";
 import { useModal } from "@/hooks/useModal";
 
-export default function PowerCooling() {
+export default function PowerCooling(props) {
+  const { heading, description } = props;
   const { openModal } = useModal();
   return (
     <section className="relative w-full bg-white py-40">
@@ -12,11 +13,10 @@ export default function PowerCooling() {
         <div className="flex items-start justify-between">
           <div className="max-w-2xl">
             <h2 className="mb-6 text-4xl leading-tight font-semibold text-black">
-              Powerful Cooling. 80% Less Energy.
+              {heading}
             </h2>
             <p className="text-lg leading-relaxed text-black">
-              Vaayu’s patented Hybrid Aircooling Systems deliver clean, consistent, and
-              energy-efficient cooling — without compressors, without compromise.
+              {description}
             </p>
           </div>
           <div className="self-end">

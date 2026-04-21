@@ -14,14 +14,33 @@ const navbarMenuData = [
   {
     id: 3,
     title: "Product",
-    path: "/product",
     newTab: false,
+    submenu: [
+      {
+        id: 31,
+        title: "Air Handling Units",
+        path: "/airhandlingunits",
+        newTab: false,
+      },
+      {
+        id: 32,
+        title: "Industrial Air Coolers",
+        path: "/industrialaircoolers",
+        newTab: false,
+      },
+      {
+        id: 33,
+        title: "Vibranium Cooling",
+        path: "/vibraniumcooling",
+        newTab: false,
+      },
+    ],
   },
   {
     id: 4,
     title: "Media",
     newTab: false,
-   submenu: [
+    submenu: [
       {
         id: 41,
         title: "Media Awards",
