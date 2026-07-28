@@ -22,18 +22,20 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
-      >
+ return (
+     <html lang="en">
+       <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}>
         <Header />
         <ModalProvider>
           <main className="flex-1">{children}</main>
         </ModalProvider>
         <Footer />
         <WhatsAppButton />
-      </body>
-    </html>
-  );
+        <div className="flex flex-col items-center justify-center h-screen">
+          <h1 className="text-4xl font-bold mb-4">Site Under Maintenance</h1>
+          <p className="text-lg text-gray-700">Our site is temporarily offline. We will be back shortly.</p>
+        </div>
+       </body>
+     </html>
+   );
 }
