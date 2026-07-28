@@ -1,0 +1,23 @@
+/* Maintenance.css */
+.maintenance-container {
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  height: 100vh;
+  background-color: #00539C; /* Vaayu brand blue */
+  text-align: center;
+  padding: 1rem;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+.maintenance-logo {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+.maintenance-content h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+.maintenance-content p {
+  font-size: 1.2em;
+}
