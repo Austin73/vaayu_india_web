@@ -172,7 +172,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 pt-8 text-sm md:flex-row">
         {/* Left: Copyright */}
         <div className="text-white">
-          © {new Date().getFullYear()} Vaayu Aircool. All rights reserved.
+          © {new Date().getFullYear()} Vaayu Aircon. All rights reserved.
         </div>
         {/* Center: Links */}
         <div className="flex gap-6">
