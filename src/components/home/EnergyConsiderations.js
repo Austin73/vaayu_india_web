@@ -93,7 +93,7 @@ export default function EnergyConsiderations() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p className="mb-6 text-justify text-xl leading-relaxed text-black">
-            At Vaayu Aircool, we design and manufacture hybrid air cooling systems that cool large
+            At Vaayu Aircon, we design and manufacture hybrid air cooling systems that cool large
             areas while using much less electricity than traditional air conditioners. Our systems
             bring in fresh air, lower energy bills, and provide reliable cooling for everyday
             operations.
