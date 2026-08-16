@@ -20,7 +20,7 @@ export const INDUSTRIAL_AIR_COOLERS_KEY_BENEFITS_DATA = [
         alt: "air",
         title: "High Airflow & Coverage",
         subtitle:
-            "Engineered for large spaces, Vaayu coolers deliver strong and consistent airflow across factories, warehouses, and commercial facilities.",
+            "Engineered for large spaces, Vaayu Aircon coolers deliver strong and consistent airflow across factories, warehouses, and commercial facilities.",
     },
     {
         id: "4",
