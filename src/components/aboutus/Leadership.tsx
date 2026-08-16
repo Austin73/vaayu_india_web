@@ -23,7 +23,7 @@ export default function Leadership() {
           </p>
           <ul className="mt-4 ml-5 list-disc space-y-2 text-gray-700">
             <li>
-              <span className="font-medium">Innovator:</span> Her vision has led Vaayu to win the
+              <span className="font-medium">Innovator:</span> Her vision has led Vaayu Aircon to win the
               SKOCH Award, be named a Top 100 SME, and secure her a spot as a Top Woman in Tech.
             </li>
             <li>
@@ -42,7 +42,7 @@ export default function Leadership() {
       <div className="grid items-center gap-10 space-y-10 md:grid-cols-2 md:gap-16 md:space-y-0">
         <div className="max-w-prose">
           <h3 className="text-2xl font-semibold text-gray-900">Mr. Pranav Mokshmar</h3>
-          <p className="text-gray-500">Managing Director, Vaayu</p>
+          <p className="text-gray-500">Managing Director, Vaayu Aircon</p>
           <p className="mt-1 text-sm text-gray-500 italic">
             Hybrid AHU Visionary • Sustainable Cooling Advocate • HVAC Innovator
           </p>
