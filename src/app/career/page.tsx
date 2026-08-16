@@ -25,7 +25,7 @@ export default async function AdminCareerPage() {
         <div>
           <h1 className="text-3xl font-bold text-dark">Career Roles</h1>
           <p className="mt-1 text-sm text-body-color">
-            Manage open positions at Vaayu
+            Manage open positions at Vaayu Aircon
           </p>
         </div>
         <Link
