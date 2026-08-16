@@ -28,6 +28,6 @@ export const AIR_HANDLING_UNITS_KEY_BENEFITS_DATA = [
         alt: "co2",
         title: "Improved Indoor Air Quality",
         subtitle:
-            "Equipped with advanced filtration systems, Vaayu AHUs effectively remove dust, contaminants, and pollutants to support healthier indoor environments.",
+            "Equipped with advanced filtration systems, Vaayu Aircon AHUs effectively remove dust, contaminants, and pollutants to support healthier indoor environments.",
     },
 ];
