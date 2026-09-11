@@ -23,10 +23,46 @@ export default function MediaAwardsPage() {
       <AwardCarousel
         items={[
           {
-            image: "/images/awards/rehman.png",
-            caption:
-              "Vaayu Founders Meet Gem Of India 'The A. R. Rehman' Invited For Exploring Vaayu Technology",
+            image: "/images/awards/100.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
           },
+          {
+            image: "/images/awards/101.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/102.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/103.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/104.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/105.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/106.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/107.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          {
+            image: "/images/awards/108.jpeg",
+            caption: "Our team being recognized at International Cooling Expo 2024",
+          },
+          // {
+          //   image: "/images/awards/rehman.png",
+          //   caption:
+          //     "Vaayu Founders Meet Gem Of India 'The A. R. Rehman' Invited For Exploring Vaayu Technology",
+          // },
           {
             image: "/images/awards/team.png",
             caption: "Our team being recognized at International Cooling Expo 2024",
