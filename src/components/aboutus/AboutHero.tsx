@@ -17,9 +17,9 @@ export default function AboutHero() {
             80% and water use by 60%, without compromising on performance.
           </p>
           <p className="mt-7 leading-relaxed text-gray-600">
-            While the industry keeps building bigger, thirstier systems, we're building smarter ones
-            — sustainable, scalable cooling technology engineered for the businesses and buildings
-            of tomorrow.
+            While the industry keeps building bigger, thirstier systems, we&apos;re building smarter
+            ones — sustainable, scalable cooling technology engineered for the businesses and
+            buildings of tomorrow.
           </p>
           <p className="mt-7 leading-relaxed text-gray-600">
             Less energy. Less water. More cool. This is climate-conscious cooling, built for scale.
