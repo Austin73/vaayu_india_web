@@ -17,8 +17,15 @@ export default function EnergyConsiderations() {
 
   const buttonVariants = {
     hidden: { scale: 0.8, opacity: 0 },
-    visible: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 300, damping: 20 } },
-    hover: { scale: 1.1, transition: { type: "spring", stiffness: 300, damping: 15 } },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { type: "spring", stiffness: 300, damping: 20 },
+    },
+    hover: {
+      scale: 1.1,
+      transition: { type: "spring", stiffness: 300, damping: 15 },
+    },
   };
 
   const floatingVariants = {
@@ -43,8 +50,13 @@ export default function EnergyConsiderations() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <h2 className="line- relative z-10 text-3xl font-[500] text-black md:text-5xl">
-            Industrial & Commercial Cooling Solutions
+          <h2 className="relative z-10 w-full leading-tight font-[500] text-black">
+            <span className="block text-[clamp(1.1rem,3.6vw,3rem)] whitespace-nowrap">
+              Patented Cooling Technology for
+            </span>
+            <span className="block text-[clamp(1.1rem,3.6vw,3rem)] whitespace-nowrap">
+              Industrial &amp; Commercial Spaces
+            </span>
           </h2>
           <div className="relative mt-6 h-auto w-full max-w-[500px] md:h-[400px]">
             {/* Airflow animated gradient behind the image */}
@@ -92,18 +104,19 @@ export default function EnergyConsiderations() {
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <p className="mb-6 text-justify text-xl leading-relaxed text-black">
-            At Vaayu Aircon, we design and manufacture hybrid air cooling systems that cool large
-            areas while using much less electricity than traditional air conditioners. Our systems
-            bring in fresh air, lower energy bills, and provide reliable cooling for everyday
-            operations.
+          <p className="mb-0 text-justify text-xl leading-relaxed text-black">
+            At Vaayu Aircon, we design and manufacture patented hybrid air cooling systems that cool
+            large spaces while using a fraction of the electricity traditional air conditioners
+            require. By combining fresh-air circulation with advanced evaporative technology, our
+            systems deliver reliable cooling, cleaner indoor air, and significantly lower energy
+            bills — with none of the compromises of conventional AC.
             <br />
             <br />
-            Whether it’s a factory, warehouse, commercial building, school, or public facility,
-            Vaayu cooling solutions are built to deliver consistent performance with lower running
-            costs.
+            From factories and warehouses to schools, offices, and public facilities, Vaayu's
+            cooling solutions are engineered for Indian conditions — built to perform consistently,
+            run efficiently, and keep operating costs low, year after year.
           </p>
-          <motion.button
+          {/* <motion.button
             className="bg-primary w-full max-w-[144px] rounded-full px-6 py-2 text-sm text-white transition md:w-36"
             variants={buttonVariants}
             initial="hidden"
@@ -112,7 +125,7 @@ export default function EnergyConsiderations() {
             onClick={() => router.push("/product")}
           >
             Know More
-          </motion.button>
+          </motion.button> */}
         </motion.div>
       </div>
     </section>
