@@ -14,6 +14,8 @@ import WhyVaayu from "@/components/common/WhyVaayu";
 import Testimonials from "@/components/common/Testimonials";
 import Support from "@/components/common/Support";
 import { WHY_VAAYU_CARD_DATA } from "@/constants/homeConstants";
+import Gallery from "@/components/home/Gallery";
+import GalleryDemo from "@/components/home/GalleryDemo";
 
 export default function Home() {
   const { openModal } = useModal();
@@ -60,18 +62,19 @@ export default function Home() {
       <Hero />
       <EnergyConsiderations />
       <Advantages />
-      <CustomApplications />
+      {/* <CustomApplications />
       <Performance />
-      <Efficiency />
+      <Efficiency /> */}
+      <GalleryDemo />
       <TraditionalCooling />
       <Impact />
       <Partners />
-      <WhyVaayu
-        heading="Why Choose Vaayu Cooling Systems"
+      {/* <WhyVaayu
+        heading="Why Choose Vaayu"
         description="Vaayu delivers energy-efficient hybrid air-cooling solutions designed to reduce operating costs, improve air quality, and support sustainable performance in commercial and industrial spaces."
         cardData={WHY_VAAYU_CARD_DATA}
         animationProps={{ initial: true, whileInView: true, viewport: { once: true, amount: 0.3 } }}
-      />
+      /> */}
       <Testimonials />
       <Support cardsData={supportCardsData} />
     </>
