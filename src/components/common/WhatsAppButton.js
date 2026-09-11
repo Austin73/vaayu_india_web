@@ -21,11 +21,11 @@ export default function WhatsAppButton() {
   const waUrl = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <div className="fixed right-6 bottom-6 z-50 flex flex-col items-end gap-3">
       {/* Tooltip */}
       {tooltipVisible && (
-        <div className="animate-fade-in relative flex items-center gap-2 rounded-xl bg-white px-4 py-3 shadow-two">
-          <p className="max-w-[200px] text-sm font-medium text-dark">
+        <div className="animate-fade-in shadow-two relative flex items-center gap-2 rounded-xl bg-white px-4 py-3">
+          <p className="text-dark max-w-[200px] text-sm font-medium">
             Need help? Chat with us on WhatsApp!
           </p>
           <button
@@ -38,7 +38,7 @@ export default function WhatsAppButton() {
             <X className="h-3.5 w-3.5" />
           </button>
           {/* Arrow */}
-          <div className="absolute -bottom-1.5 right-6 h-3 w-3 rotate-45 bg-white shadow-sm" />
+          <div className="absolute right-6 -bottom-1.5 h-3 w-3 rotate-45 bg-white shadow-sm" />
         </div>
       )}
 
@@ -50,9 +50,10 @@ export default function WhatsAppButton() {
         aria-label="Chat on WhatsApp"
         onMouseEnter={() => setTooltipVisible(true)}
         onMouseLeave={() => setTooltipVisible(false)}
-        className="group flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95"
+        className="group flex h-16 items-center gap-3 rounded-full bg-[#128C7E] px-5 text-white shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95"
       >
-        <WhatsAppIcon className="h-7 w-7 transition-transform duration-300 group-hover:rotate-12" />
+        <WhatsAppIcon className="h-9 w-9 shrink-0 transition-transform duration-300 group-hover:rotate-12" />
+        <span className="text-base font-semibold whitespace-nowrap">Chat on WhatsApp</span>
       </a>
     </div>
   );
