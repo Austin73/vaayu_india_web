@@ -4,6 +4,7 @@ import { useModal } from "@/hooks/useModal";
 import Image from "next/image";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { AirVent, ZapOff, Droplets, Wind, Thermometer, Leaf, Award } from "lucide-react";
 
 export default function Hero() {
   const { openModal } = useModal();
@@ -18,26 +19,65 @@ export default function Hero() {
     visible: { x: 0, opacity: 1 },
   };
 
+  const fadeUpVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+  };
+
   const headlineControls = useAnimation();
   const carbonWatchControls = useAnimation();
-  const bottomCardsControls = useAnimation();
+  const featureBoxesControls = useAnimation();
 
   useEffect(() => {
     headlineControls.start("visible");
     carbonWatchControls.start("visible");
-    bottomCardsControls.start("visible");
-  }, [headlineControls, carbonWatchControls, bottomCardsControls]);
+    featureBoxesControls.start("visible");
+  }, [headlineControls, carbonWatchControls, featureBoxesControls]);
+
+  const features = [
+    {
+      icon: AirVent,
+      label: "Compressor based unique cooling tech",
+    },
+    {
+      icon: ZapOff,
+      label: "Reduce Power Consumption by 80%",
+    },
+    {
+      icon: Droplets,
+      label: "Reduce Water Consumption by 60%",
+    },
+    {
+      icon: Wind,
+      label: "100% Fresh Air",
+    },
+    {
+      icon: Thermometer,
+      label: "20° temperature drop",
+    },
+    {
+      icon: Leaf,
+      label: "Eco friendly",
+    },
+    {
+      icon: Award,
+      label: "Generates Carbon Credits",
+    },
+  ];
 
   return (
-    <section className="relative min-h-[92vh] overflow-x-hidden md:min-h-screen">
+    <section className="relative min-h-[92vh] overflow-hidden md:min-h-screen">
       {/* Background */}
       <div
-        className="absolute inset-0 -z-10 min-h-screen w-screen bg-cover bg-center"
-        style={{ backgroundImage: "url(/images/hero/background.png)" }}
+        className="absolute inset-0 -z-10 h-full w-full bg-cover bg-center"
+        style={{
+          backgroundImage: "url(/images/hero/background.png)",
+        }}
       />
-      {/* Headline + CTA (center) */}
+
+      {/* Headline */}
       <motion.div
-        className="relative mx-auto max-w-[1100px] px-4 pt-20 text-center md:pt-48 lg:pt-56"
+        className="relative z-10 mx-auto max-w-[1100px] px-4 pt-20 text-center md:pt-48 lg:pt-56"
         initial="hidden"
         animate={headlineControls}
         transition={{ duration: 1 }}
@@ -48,23 +88,11 @@ export default function Hero() {
           <br />
           Cut Energy Costs by Up to 80%
         </h1>
-
-        <motion.button
-          className="bg-primary mt-6 inline-flex items-center justify-center rounded-full px-7 py-3 font-semibold text-white shadow-md hover:shadow-lg"
-          initial="hidden"
-          animate={headlineControls}
-          transition={{ duration: 1, delay: 0.2 }}
-          variants={animationVariants}
-          onClick={() => {
-            openModal();
-          }}
-        >
-          Book A Call With Expert
-        </motion.button>
       </motion.div>
-      {/* Carbon Watch (right) */}
+
+      {/* Carbon Watch */}
       <motion.div
-        className="mx-auto mt-8 block w-[240px] md:absolute md:top-[40%] md:right-20 md:block md:-translate-y-1/2"
+        className="mx-auto mt-8 block w-[200px] md:absolute md:top-[40%] md:right-20 md:w-[240px] md:-translate-y-1/2"
         initial="hidden"
         animate={carbonWatchControls}
         transition={{ duration: 1 }}
@@ -72,7 +100,7 @@ export default function Hero() {
       >
         <Image
           src="/images/hero/carbonwatch.png"
-          alt="Reduce Carbon Emission by 80%"
+          alt="Reduce Carbon Emission"
           width={240}
           height={240}
           className="object-contain"
@@ -80,94 +108,28 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Bottom Cards (frosted) */}
+      {/* Feature Cards - Almost at the bottom of Hero */}
       <motion.div
-        className="mx-auto mt-8 mb-4 flex max-w-[1100px] flex-col gap-4 px-4 md:absolute md:bottom-6 md:h-[240px] md:flex-row md:gap-4 md:justify-self-center"
+        className="absolute bottom-5 left-1/2 z-10 grid w-[calc(100%-40px)] max-w-[1550px] -translate-x-1/2 grid-cols-7 gap-4"
         initial="hidden"
-        animate={bottomCardsControls}
-        transition={{ duration: 1, delay: 0.4 }}
-        variants={animationVariants}
+        animate={featureBoxesControls}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        variants={fadeUpVariants}
       >
-        {/* Card 1 */}
-        <div className="flex w-full items-center rounded-2xl border border-white/30 bg-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.15)] backdrop-blur-md md:w-[610px]">
-          {/* Left Image */}
-          <div className="self-center">
-            <Image
-              src="/images/hero/person1.png"
-              alt="Customer enjoying cool air"
-              width={320}
-              height={200}
-              className="object-scale-down p-2"
-            />
-          </div>
-          {/* Right Content */}
-          <div className="flex flex-col self-end-safe p-6">
-            <p className="text-lg leading-snug font-bold text-white">
-              80% Reduction in Energy Consumption
-            </p>
-            <p className="mt-2 text-sm text-white/90">Your cool energy efficient Choice</p>
-            <a
-              href="#"
-              className="mt-4 inline-block text-sm text-white underline underline-offset-4"
-            >
-              Explore Our Product
-            </a>
-          </div>
-        </div>
+        {features.map(({ icon: Icon, label }, i) => (
+          <div
+            key={i}
+            className="flex min-h-[190px] flex-col items-center justify-center gap-6 rounded-3xl border border-white/30 bg-white/10 px-5 py-7 text-center shadow-[0_10px_30px_rgba(0,0,0,0.15)] backdrop-blur-md"
+          >
+            {/* Icon */}
+            <div className="text-primary grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white">
+              <Icon size={28} strokeWidth={2} />
+            </div>
 
-        {/* Card 2 */}
-        <div className="flex w-full flex-col justify-center rounded-2xl border border-white/30 bg-white/10 px-1 py-1 shadow-[0_10px_30px_rgba(0,0,0,0.15)] backdrop-blur-sm md:w-auto md:flex-col">
-          <div className="mb-2 flex -space-x-3 self-center py-2">
-            <Image
-              src="/images/hero/person2.png"
-              alt="avatar"
-              width={55}
-              height={55}
-              className="rounded-full object-cover ring-1 ring-white"
-            />
-            <Image
-              src="/images/hero/person3.png"
-              alt="avatar"
-              width={55}
-              height={55}
-              className="rounded-full object-cover ring-1 ring-gray-200"
-            />
-            <Image
-              src="/images/hero/person4.png"
-              alt="avatar"
-              width={55}
-              height={55}
-              className="rounded-full object-cover ring-1 ring-gray-200"
-            />
-            <Image
-              src="/images/hero/person5.png"
-              alt="avatar"
-              width={55}
-              height={55}
-              className="rounded-full object-cover ring-1 ring-gray-200"
-            />
+            {/* Text */}
+            <p className="text-base leading-snug font-semibold text-white">{label}</p>
           </div>
-          <div className="text-center">
-            <p className="text-[16px] font-[500] text-white/90">Trusted by</p>
-            <div className="text-[30px] leading-none font-[500] text-white">10M+</div>
-            <p className="text-[16px] font-[500] text-white/90">Customers Across India</p>
-            <a
-              href="#"
-              className="mt-1 inline-block text-sm font-[400] text-white/95 underline underline-offset-4"
-            >
-              See What Our Customers Saying
-            </a>
-          </div>
-        </div>
-
-        {/* Card 3 */}
-        <div className="flex flex-col justify-center rounded-2xl border border-white/30 bg-white/10 px-6 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.15)] backdrop-blur-sm">
-          <div className="text-primary mb-6 grid h-15 w-15 place-items-center rounded-full bg-white text-[12px] font-semibold">
-            CO₂
-          </div>
-          <p className="font-bold text-white">Significant Carbon Footprint Reduction</p>
-          <p className="mt-3 text-sm text-white">Acclaimed reduction in carbon emissions by 80%.</p>
-        </div>
+        ))}
       </motion.div>
     </section>
   );
