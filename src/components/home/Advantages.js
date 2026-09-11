@@ -131,7 +131,7 @@ export default function Advantages() {
   return (
     <section className="bg-white px-6 py-20 md:px-12">
       <div className="mx-auto mb-12 max-w-6xl">
-        <h2 className="mb-4 text-4xl font-bold text-black">Why Choose Vaayu Cooling Systems</h2>
+        <h2 className="mb-4 text-4xl font-bold text-black">Why Choose Vaayu?</h2>
         <p className="text-xl text-black">The Smart and Sustainable Choice.</p>
       </div>
 
