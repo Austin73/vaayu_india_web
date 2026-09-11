@@ -44,26 +44,27 @@ export default function Partners() {
 
   return (
     <section className="relative w-full bg-white py-20">
-      <div className="mx-auto max-w-full">
-        {/* Heading */}
-        <div className="mb-12 max-w-3xl px-6 md:px-20">
+      {/* Heading — same mx-auto max-w-7xl + px-6 md:px-12 wrapper as Impact's heading,
+          so the left edge lines up with "Real Impact. Reliable Results." above */}
+      <div className="mx-auto mb-12 max-w-7xl px-6 md:px-12">
+        <div className="max-w-3xl">
           <h2 className="mb-4 text-4xl leading-snug font-medium text-black">
             Trusted by Leading Brands & Institutions
           </h2>
-          <p className="text-justify text-lg leading-relaxed text-black">
+          {/* <p className="text-justify text-lg leading-relaxed text-black">
             Top companies, government organizations, and industrial facilities across India trust
             Vaayu’s energy-efficient cooling systems. Our solutions power reliable, cost-effective
             cooling for diverse environments at scale.
-          </p>
+          </p> */}
         </div>
+      </div>
 
-        {/* Marquee (infinite autoplay) */}
-        <div className="relative overflow-hidden">
-          <div className="animate-partners-marquee flex w-max will-change-transform">
+      {/* Marquee (infinite autoplay) — kept full-bleed, outside the max-w-7xl wrapper */}
+      <div className="relative overflow-hidden">
+        <div className="animate-partners-marquee flex w-max will-change-transform">
+          <Strip />
+          <div aria-hidden="true">
             <Strip />
-            <div aria-hidden="true">
-              <Strip />
-            </div>
           </div>
         </div>
       </div>
