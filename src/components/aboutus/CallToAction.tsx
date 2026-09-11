@@ -1,4 +1,5 @@
 import React from "react";
+import WhatsAppButton from "@/components/common/WhatsAppButton";
 
 export default function CallToAction() {
   return (
@@ -6,9 +7,9 @@ export default function CallToAction() {
       <h2 className="mb-6 text-xl font-semibold text-white md:text-2xl">
         Let’s Meet And Talk About The Future <br /> Over A Cup Of Coffee!
       </h2>
-      <button className="rounded-full bg-white px-6 py-3 font-medium text-black shadow-md transition hover:bg-gray-200">
-        Connect With Us
-      </button>
+      <div className="mt-6 flex justify-center">
+        <WhatsAppButton />
+      </div>
     </section>
   );
 }
