@@ -24,18 +24,18 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
- return (
-     <html lang="en">
-       <body className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}>
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col antialiased`}
+      >
         <Header />
         <ModalProvider>
-          <main className="flex-1">
-            {MAINTENANCE_MODE ? <MaintenanceMessage /> : children}
-          </main>
+          <main className="flex-1">{MAINTENANCE_MODE ? <MaintenanceMessage /> : children}</main>
         </ModalProvider>
         <Footer />
         <WhatsAppButton />
-       </body>
-     </html>
-   );
+      </body>
+    </html>
+  );
 }
