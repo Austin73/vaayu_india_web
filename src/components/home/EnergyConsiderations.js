@@ -112,7 +112,7 @@ export default function EnergyConsiderations() {
             bills — with none of the compromises of conventional AC.
             <br />
             <br />
-            From factories and warehouses to schools, offices, and public facilities, Vaayu's
+            From factories and warehouses to schools, offices, and public facilities, Vaayu&apos;s
             cooling solutions are engineered for Indian conditions — built to perform consistently,
             run efficiently, and keep operating costs low, year after year.
           </p>
