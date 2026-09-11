@@ -9,9 +9,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white">
       <AboutHero />
-      <QuoteSection />
-      <MissionVision />
-      <Roadmap />
+      {/* <QuoteSection />
+      <MissionVision /> */}
+      {/* <Roadmap /> */}
       <Leadership />
       <CallToAction />
     </div>
