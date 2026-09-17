@@ -49,7 +49,7 @@ export default function Partners() {
       <div className="mx-auto mb-12 max-w-7xl px-6 md:px-12">
         <div className="max-w-3xl">
           <h2 className="mb-4 text-4xl leading-snug font-medium text-black">
-            Trusted by Leading Brands & Institutions
+            Our Prestigious Clients
           </h2>
           {/* <p className="text-justify text-lg leading-relaxed text-black">
             Top companies, government organizations, and industrial facilities across India trust
