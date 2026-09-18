@@ -195,11 +195,11 @@ export default function Header() {
             <button
               className="bg-primary cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105"
               onClick={() => {
-                const link = document.createElement("a");
-                link.href =
-                  "https://drive.google.com/uc?export=download&id=1GjHzSiys6djNiBCFuO2n0W86IqdKwi17";
-                link.download = "Vaayu_Brochure.pdf";
-                link.click();
+                window.open(
+                  "https://drive.google.com/file/d/1QJ-leFg9bz1PGCZ_ddeNe9gTeXOGlAlT/view?usp=share_link",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
               }}
             >
               Download Brochure
@@ -269,19 +269,15 @@ export default function Header() {
                 </Link>
               )
             )}
-            <button
-              className="bg-primary mt-2 cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105"
-              onClick={() => {
-                const link = document.createElement("a");
-                link.href =
-                  "https://drive.google.com/uc?export=download&id=1GjHzSiys6djNiBCFuO2n0W86IqdKwi17";
-                link.download = "Vaayu_Brochure.pdf";
-                link.click();
-                setMobileMenuOpen(false);
-              }}
+            <a
+              href="https://drive.google.com/file/d/1QJ-leFg9bz1PGCZ_ddeNe9gTeXOGlAlT/view?usp=share_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary mt-2 inline-block cursor-pointer rounded-full px-6 py-2 font-bold text-white drop-shadow-md hover:scale-105"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Download Brochure
-            </button>
+            </a>
           </nav>
         </div>
       )}
