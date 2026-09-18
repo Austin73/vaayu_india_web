@@ -99,7 +99,7 @@ export default function Hero() {
         variants={rightAnimationVariants}
       >
         <Image
-          src="/images/hero/carbonwatch.png"
+          src="/images/hero/carbonwatch.svg"
           alt="Reduce Carbon Emission"
           width={240}
           height={240}
