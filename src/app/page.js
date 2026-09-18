@@ -75,7 +75,7 @@ export default function Home() {
         cardData={WHY_VAAYU_CARD_DATA}
         animationProps={{ initial: true, whileInView: true, viewport: { once: true, amount: 0.3 } }}
       /> */}
-      <Testimonials />
+       {/* <Testimonials /> */}
       <Support cardsData={supportCardsData} />
     </>
   );
