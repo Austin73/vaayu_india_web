@@ -6,7 +6,7 @@ import SavingsCalculator from "./SavingsCalculator";
 
 export default function TraditionalCooling() {
   return (
-    <section className="relative min-h-screen w-full bg-[url('/images/home/traditionalcooling/traditionalcooling.png')] bg-cover bg-center">
+    <section className="relative min-h-screen w-full bg-[url('/images/home/traditionalcooling/traditionalcooling.webp')] bg-cover bg-center">
       {/* Overlay Layer */}
       <div className="absolute inset-0 flex flex-col">
         {/* Heading & Description (Top Left) */}
@@ -18,7 +18,7 @@ export default function TraditionalCooling() {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <h2 className="mb-4 text-3xl leading-snug font-bold text-white md:text-4xl">
-           Powerful Cooling. Remarkable Efficiency.
+            More Efficient Than Traditional Air Conditioning
           </h2>
           <p className="text-justify text-base leading-relaxed text-white/90">
             Vaayu hybrid air cooling systems deliver powerful cooling while using significantly less
