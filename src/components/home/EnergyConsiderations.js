@@ -105,16 +105,15 @@ export default function EnergyConsiderations() {
           viewport={{ once: true, amount: 0.3 }}
         >
           <p className="mb-0 text-justify text-xl leading-relaxed text-black">
-            At Vaayu Aircon, we design and manufacture patented hybrid air cooling systems that cool
-            large spaces while using a fraction of the electricity traditional air conditioners
-            require. By combining fresh-air circulation with advanced evaporative technology, our
-            systems deliver reliable cooling, cleaner indoor air, and significantly lower energy
-            bills — with none of the compromises of conventional AC.
+            With over <bold>10 years of expertise in industrial and commercial cooling</bold>, 
+          Vaayu has pioneered innovative, energy-efficient solutions designed for demanding large spaces. 
+            Our strength lies in understanding the unique cooling challenges of factories, warehouses, workshops, commercial facilities, 
+            and other high-occupancy environments—and engineering solutions that deliver reliable performance with significantly lower energy consumption.
             <br />
             <br />
-            From factories and warehouses to schools, offices, and public facilities, Vaayu&apos;s
-            cooling solutions are engineered for Indian conditions — built to perform consistently,
-            run efficiently, and keep operating costs low, year after year.
+           At the heart of Vaayu is our *patented hybrid cooling technology, combining refrigeration and evaporative cooling to deliver powerful, 
+            efficient cooling with continuous fresh-air circulation. As a manufacturer with proprietary technology, Vaayu offers a **distinct technological and business advantage*, delivering scalable cooling solutions that help customers improve comfort, reduce operating costs, 
+            and move towards a more sustainable future.
           </p>
           {/* <motion.button
             className="bg-primary w-full max-w-[144px] rounded-full px-6 py-2 text-sm text-white transition md:w-36"
