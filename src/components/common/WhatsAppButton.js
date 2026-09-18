@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 
-const PHONE_NUMBER = "919685090174";
+const PHONE_NUMBER = "919981184811";
 const DEFAULT_MESSAGE =
   "Hi Vaayu India! I'm interested in learning more about your energy-efficient air cooling solutions. Could you help me with more details?";
 
