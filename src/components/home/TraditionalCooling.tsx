@@ -18,7 +18,7 @@ export default function TraditionalCooling() {
           transition={{ duration: 1.2, ease: "easeOut" }}
         >
           <h2 className="mb-4 text-3xl leading-snug font-bold text-white md:text-4xl">
-            More Efficient Than Traditional Air Conditioning
+           Powerful Cooling. Remarkable Efficiency.
           </h2>
           <p className="text-justify text-base leading-relaxed text-white/90">
             Vaayu hybrid air cooling systems deliver powerful cooling while using significantly less
