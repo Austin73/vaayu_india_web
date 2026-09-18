@@ -84,9 +84,9 @@ export default function Hero() {
         variants={animationVariants}
       >
         <h1 className="font-500 text-[15px] leading-tight text-black sm:text-[23px] lg:text-[41px]">
-          Smart Air Cooling Systems That
+          Smart Air Cooling System that
           <br />
-          Cut Energy Costs by Up to 80%
+          Cuts Energy Cost by Up to 80%
         </h1>
       </motion.div>
 
