@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Footer() {
   const router = useRouter();
@@ -23,32 +24,32 @@ export default function Footer() {
     },
     {
       id: "3",
-      path: "",
+      path: "/images/certifications/rohs-compliant.png",
       alt: "",
       imageWidth: 68,
       imageHeight: 31,
     },
-    {
-      id: "4",
-      path: "",
-      alt: "",
-      imageWidth: 68,
-      imageHeight: 31,
-    },
-    {
-      id: "5",
-      path: "",
-      alt: "",
-      imageWidth: 68,
-      imageHeight: 31,
-    },
-    {
-      id: "6",
-      path: "",
-      alt: "",
-      imageWidth: 68,
-      imageHeight: 31,
-    },
+    // {
+    //   id: "4",
+    //   path: "",
+    //   alt: "",
+    //   imageWidth: 68,
+    //   imageHeight: 31,
+    // },
+    // {
+    //   id: "5",
+    //   path: "",
+    //   alt: "",
+    //   imageWidth: 68,
+    //   imageHeight: 31,
+    // },
+    // {
+    //   id: "6",
+    //   path: "",
+    //   alt: "",
+    //   imageWidth: 68,
+    //   imageHeight: 31,
+    // },
   ];
   const renderCertificationImages = () =>
     certificationImages.map((certImg) => {
@@ -149,22 +150,22 @@ export default function Footer() {
         </div>
         {/* Address */}
         <div>
-          <div className="mb-3 font-bold text-gray-300">Address</div>
+          <div className="mb-3 font-bold text-gray-300">Headquarters</div>
           <div className="mb-3 text-white">
             International Office:
             <br />
             Luniya Compound, Vaayu Global Tower,
             <br /> behind Tata Showroom, Lasudia
             <br />
-            Mori, Indore, Madhya Pradesh 452010          
+            Mori, Indore, Madhya Pradesh 452010
           </div>
-          <div className="mb-3 text-white">
+          {/* <div className="mb-3 text-white">
             Experience Zone:FH-196,
             <br />
             Scheme No.54, Vijay Nagar, Indore -
             <br />
             452010, (M.P)
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -176,15 +177,15 @@ export default function Footer() {
         </div>
         {/* Center: Links */}
         <div className="flex gap-6">
-          <a href="#" className="text-white hover:text-gray-200">
+          <Link href="/terms" className="text-white hover:text-gray-200">
             Terms
-          </a>
-          <a href="#" className="text-white hover:text-gray-200">
+          </Link>
+          <Link href="/privacy-policy" className="text-white hover:text-gray-200">
             Privacy Policy
-          </a>
-          <a href="#" className="text-white hover:text-gray-200">
+          </Link>
+          <Link href="/cookie-policy" className="text-white hover:text-gray-200">
             Cookie Policy
-          </a>
+          </Link>
         </div>
         {/* Right: Social Icons */}
         <div className="flex gap-4">
