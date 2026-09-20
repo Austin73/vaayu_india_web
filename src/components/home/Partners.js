@@ -21,24 +21,38 @@ export default function Partners() {
     { src: "/images/home/partners/great-galleon.png", alt: "Great Galleon Ventures" },
     { src: "/images/home/partners/mcd.png", alt: "McDonalds" },
     { src: "/images/home/partners/indian-railways.png", alt: "Indian Railways" },
+    { src: "/images/home/partners/simplex.png", alt: "Simplex" },
+    { src: "/images/home/partners/vijay-chat.png", alt: "Vijay Chat" },
+    { src: "/images/home/partners/eagle.png", alt: "Eagle" },
+    { src: "/images/home/partners/julite.png", alt: "Julite" },
+    { src: "/images/home/partners/quest.png", alt: "Quest" },
+    { src: "/images/home/partners/barbeque.png", alt: "Barbeque" },
+    { src: "/images/home/partners/pmc.png", alt: "PMC" },
+    { src: "/images/home/partners/dc.png", alt: "Db" },
+    { src: "/images/home/partners/covestro.png", alt: "Covestro" },
+    { src: "/images/home/partners/blue.png", alt: "blue" },
+    { src: "/images/home/partners/yashoda.png", alt: "Yashoda" },
+    { src: "/images/home/partners/sai.png", alt: "sai" },
+    { src: "/images/home/partners/ajanta.png", alt: "ajanta" },
+    { src: "/images/home/partners/porwal.png", alt: "Porwal" },
+    { src: "/images/home/partners/pcpl.png", alt: "PCPl" },
+    { src: "/images/home/partners/jj.png", alt: "JJ" },
+    { src: "/images/home/partners/saims.png", alt: "SAIMS" },
+    { src: "/images/home/partners/kankaria.png", alt: "kankaria" },
+    { src: "/images/home/partners/sagar.png", alt: "sagar" },
+    { src: "/images/home/partners/eicher.png", alt: "eicher" },
   ];
 
-  const ROW1_COUNT = 5;
-  const row1 = partners.slice(0, ROW1_COUNT);
-  const row2 = partners.slice(ROW1_COUNT);
+  // Alternate partners into two rows instead of slicing the first N vs. the rest,
+  // so both rows stay evenly filled (no big empty stretch in either row).
+  const row1 = partners.filter((_, i) => i % 2 === 0);
+  const row2 = partners.filter((_, i) => i % 2 === 1);
 
-  const Strip = () => (
-    <div className="flex flex-col gap-6 pr-6">
-      <div className="flex gap-6">
-        {row1.map((p, i) => (
-          <PartnerCard key={`r1-${i}-${p.alt}`} src={p.src} alt={p.alt} />
-        ))}
-      </div>
-      <div className="ml-40 flex gap-6">
-        {row2.map((p, i) => (
-          <PartnerCard key={`r2-${i}-${p.alt}`} src={p.src} alt={p.alt} />
-        ))}
-      </div>
+  const Strip = ({ items }) => (
+    <div className="flex gap-6 pr-6">
+      {items.map((p, i) => (
+        <PartnerCard key={`${i}-${p.alt}`} src={p.src} alt={p.alt} />
+      ))}
     </div>
   );
 
@@ -48,28 +62,29 @@ export default function Partners() {
           so the left edge lines up with "Real Impact. Reliable Results." above */}
       <div className="mx-auto mb-12 max-w-7xl px-6 md:px-12">
         <div className="max-w-3xl">
-          <h2 className="mb-4 text-4xl leading-snug font-medium text-black">
-            Our Prestigious Clients
-          </h2>
-          {/* <p className="text-justify text-lg leading-relaxed text-black">
-            Top companies, government organizations, and industrial facilities across India trust
-            Vaayu’s energy-efficient cooling systems. Our solutions power reliable, cost-effective
-            cooling for diverse environments at scale.
-          </p> */}
+          <h2 className="mb-4 text-4xl font-bold text-black">Our Prestigious Projects</h2>
         </div>
       </div>
 
       {/* Marquee (infinite autoplay) — kept full-bleed, outside the max-w-7xl wrapper */}
       <div className="relative overflow-hidden">
-        <div className="animate-partners-marquee flex w-max will-change-transform">
-          <Strip />
-          <div aria-hidden="true">
-            <Strip />
+        <div className="flex flex-col gap-6">
+          <div className="animate-partners-marquee flex w-max will-change-transform">
+            <Strip items={row1} />
+            <div aria-hidden="true">
+              <Strip items={row1} />
+            </div>
+          </div>
+          <div className="animate-partners-marquee-reverse flex w-max will-change-transform">
+            <Strip items={row2} />
+            <div aria-hidden="true">
+              <Strip items={row2} />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Local keyframes + class for the marquee */}
+      {/* Local keyframes + classes for the marquee */}
       <style jsx global>{`
         @keyframes partners-marquee {
           0% {
@@ -79,8 +94,19 @@ export default function Partners() {
             transform: translateX(-50%);
           }
         }
+        @keyframes partners-marquee-reverse {
+          0% {
+            transform: translateX(-50%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
         .animate-partners-marquee {
           animation: partners-marquee 28s linear infinite;
+        }
+        .animate-partners-marquee-reverse {
+          animation: partners-marquee-reverse 28s linear infinite;
         }
       `}</style>
     </section>
