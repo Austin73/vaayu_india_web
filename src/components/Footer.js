@@ -12,59 +12,30 @@ export default function Footer() {
       id: "1",
       path: "/images/certifications/make-in-india.png",
       alt: "Make in India",
-      imageWidth: 68,
-      imageHeight: 31,
     },
     {
       id: "2",
       path: "/images/certifications/iso.png",
       alt: "iso",
-      imageWidth: 103,
-      imageHeight: 63,
     },
     {
       id: "3",
       path: "/images/certifications/rohs-compliant.png",
-      alt: "",
-      imageWidth: 68,
-      imageHeight: 31,
+      alt: "RoHS Compliant",
     },
-    // {
-    //   id: "4",
-    //   path: "",
-    //   alt: "",
-    //   imageWidth: 68,
-    //   imageHeight: 31,
-    // },
-    // {
-    //   id: "5",
-    //   path: "",
-    //   alt: "",
-    //   imageWidth: 68,
-    //   imageHeight: 31,
-    // },
-    // {
-    //   id: "6",
-    //   path: "",
-    //   alt: "",
-    //   imageWidth: 68,
-    //   imageHeight: 31,
-    // },
   ];
+
   const renderCertificationImages = () =>
     certificationImages.map((certImg) => {
       return (
         <div
           key={certImg.id}
-          className="flex size-18 items-center justify-center rounded-full bg-white"
+          className="flex size-18 items-center justify-center overflow-hidden rounded-full bg-white p-3"
         >
           {certImg?.path && (
-            <Image
-              src={certImg.path}
-              alt={certImg.alt}
-              width={certImg.imageWidth}
-              height={certImg.imageHeight}
-            />
+            <div className="relative h-full w-full">
+              <Image src={certImg.path} alt={certImg.alt} fill className="object-contain" />
+            </div>
           )}
         </div>
       );
@@ -159,13 +130,6 @@ export default function Footer() {
             <br />
             Mori, Indore, Madhya Pradesh 452010
           </div>
-          {/* <div className="mb-3 text-white">
-            Experience Zone:FH-196,
-            <br />
-            Scheme No.54, Vijay Nagar, Indore -
-            <br />
-            452010, (M.P)
-          </div> */}
         </div>
       </div>
 
@@ -214,6 +178,21 @@ export default function Footer() {
             <Image
               src="/images/social/linkedin.svg"
               alt="Linkedin"
+              className="size-10"
+              width={42}
+              height={42}
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/vaayu-aircon/"
+            aria-label="facebook"
+            className="hover:text-white"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/social/facebook.png"
+              alt="Facebook"
               className="size-10"
               width={42}
               height={42}
