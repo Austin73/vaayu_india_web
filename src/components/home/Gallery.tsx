@@ -7,19 +7,17 @@ import { useMemo, useState } from "react";
 /* ------------------------------------------------------------------ */
 
 export interface GalleryImage {
-  id: string;
   src: string;
   alt?: string;
   /** Show the small play-button overlay (use for video thumbnails). */
   hasVideo?: boolean;
-  /** Caption shown on the centered card. Falls back to the category label when omitted. */
-  label?: string;
 }
 
 export interface GalleryCategory {
   id: string;
   label: string;
-  images: GalleryImage[];
+  /** Single representative image for this category/section. */
+  image: GalleryImage;
 }
 
 export interface GalleryProps {
@@ -30,7 +28,7 @@ export interface GalleryProps {
   defaultCategoryId?: string;
   /** Controlled active category — pass this + onCategoryChange to control it from outside. */
   activeCategoryId?: string;
-  /** Fired whenever a tab is clicked. Use this to lazy-load real images later. */
+  /** Fired whenever the active category changes — via tab click or prev/next. */
   onCategoryChange?: (categoryId: string) => void;
   /** Fired when the "View More" pill is clicked. Hidden if omitted. */
   onViewMore?: () => void;
@@ -43,7 +41,7 @@ export interface GalleryProps {
 /*  Config                                                             */
 /* ------------------------------------------------------------------ */
 
-// How each card looks based on its distance from the active (centered) card.
+// How each card looks based on its distance from the active (centered) category.
 // Distance 0 = active card. Anything beyond MAX_OFFSET is not rendered.
 const MAX_OFFSET = 2;
 
@@ -124,42 +122,30 @@ export default function Gallery({
   );
   const currentCategoryId = activeCategoryId ?? internalCategoryId;
 
-  const currentCategory = categories.find((c) => c.id === currentCategoryId) ?? categories[0];
+  const activeIndex = useMemo(() => {
+    const idx = categories.findIndex((c) => c.id === currentCategoryId);
+    return idx === -1 ? 0 : idx;
+  }, [categories, currentCategoryId]);
 
-  const images = currentCategory?.images ?? [];
+  const currentCategory = categories[activeIndex];
 
-  const [activeIndex, setActiveIndex] = useState(() => Math.floor((images.length - 1) / 2));
-
-  // Keep the centered card in range whenever the category (and thus image count) changes.
-  const safeActiveIndex = useMemo(() => {
-    if (images.length === 0) return 0;
-    return ((activeIndex % images.length) + images.length) % images.length;
-  }, [activeIndex, images.length]);
-
-  function handleTabClick(categoryId: string) {
+  function selectCategory(categoryId: string) {
     if (activeCategoryId === undefined) {
       setInternalCategoryId(categoryId);
     }
-    const cat = categories.find((c) => c.id === categoryId);
-    setActiveIndex(Math.floor(((cat?.images.length ?? 1) - 1) / 2));
     onCategoryChange?.(categoryId);
   }
 
   function goTo(step: number) {
-    if (images.length === 0) return;
-    setActiveIndex((prev) => {
-      const next = (((prev + step) % images.length) + images.length) % images.length;
-      return next;
-    });
+    if (categories.length === 0) return;
+    const next =
+      (((activeIndex + step) % categories.length) + categories.length) % categories.length;
+    selectCategory(categories[next].id);
   }
 
   return (
     <section className={`w-full ${className}`}>
-      {title && (
-        <h2 className="mb-8 text-center text-2xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
-          {title}
-        </h2>
-      )}
+      {title && <h2 className="mb-4 ml-10 text-4xl font-bold text-black">{title}</h2>}
 
       {/* Category tabs */}
       <div className="mb-10 flex flex-wrap items-center justify-center gap-2.5">
@@ -169,7 +155,7 @@ export default function Gallery({
             <button
               key={category.id}
               type="button"
-              onClick={() => handleTabClick(category.id)}
+              onClick={() => selectCategory(category.id)}
               className={`rounded-full border px-5 py-2.5 text-sm font-medium transition-colors ${
                 isActive
                   ? "border-slate-900 bg-slate-900 text-white"
@@ -193,29 +179,33 @@ export default function Gallery({
         )}
       </div>
 
-      {/* Carousel */}
+      {/* Carousel — each card is a different category's single image */}
       <div className="relative h-[clamp(300px,38vw,520px)] w-full overflow-hidden">
-        {isLoading || images.length === 0 ? (
+        {isLoading || categories.length === 0 ? (
           <div className="absolute inset-0 flex items-center justify-center text-sm text-slate-400">
             {isLoading ? "Loading images…" : "No images yet"}
           </div>
         ) : (
-          images.map((image, index) => {
+          categories.map((category, index) => {
             // Shortest signed distance from the active card, wrapping around.
-            const half = images.length / 2;
-            let offset = index - safeActiveIndex;
-            if (offset > half) offset -= images.length;
-            if (offset < -half) offset += images.length;
+            const half = categories.length / 2;
+            let offset = index - activeIndex;
+            if (offset > half) offset -= categories.length;
+            if (offset < -half) offset += categories.length;
 
             if (Math.abs(offset) > MAX_OFFSET) return null;
 
             const style = CARD_STYLES[Math.abs(offset)];
             const sign = Math.sign(offset);
+            const image = category.image;
 
             return (
               <div
-                key={image.id}
-                className="absolute top-1/2 left-1/2 overflow-hidden rounded-3xl bg-slate-100 shadow-xl transition-all duration-500 ease-out"
+                key={category.id}
+                onClick={() => offset !== 0 && selectCategory(category.id)}
+                className={`absolute top-1/2 left-1/2 overflow-hidden rounded-3xl bg-slate-100 shadow-xl transition-all duration-500 ease-out ${
+                  offset !== 0 ? "cursor-pointer" : ""
+                }`}
                 style={{
                   width: style.width,
                   height: style.height,
@@ -229,7 +219,7 @@ export default function Gallery({
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={image.src}
-                  alt={image.alt ?? ""}
+                  alt={image.alt ?? category.label}
                   className="h-full w-full object-cover"
                   draggable={false}
                 />
@@ -243,7 +233,7 @@ export default function Gallery({
                 {/* Caption for the centered card only */}
                 {offset === 0 && (
                   <span className="absolute bottom-4 left-1/2 -translate-x-1/2 rounded-full bg-white/95 px-4 py-1.5 text-sm font-semibold whitespace-nowrap text-slate-900 shadow-md">
-                    {image.label ?? currentCategory?.label}
+                    {category.label}
                   </span>
                 )}
               </div>
@@ -252,12 +242,12 @@ export default function Gallery({
         )}
       </div>
 
-      {/* Prev / next controls */}
+      {/* Prev / next controls — now move between sections/categories */}
       <div className="mt-8 flex items-center justify-center gap-3">
         <button
           type="button"
           onClick={() => goTo(-1)}
-          aria-label="Previous image"
+          aria-label="Previous section"
           className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition-colors hover:bg-slate-100"
         >
           <ArrowIcon direction="left" />
@@ -265,7 +255,7 @@ export default function Gallery({
         <button
           type="button"
           onClick={() => goTo(1)}
-          aria-label="Next image"
+          aria-label="Next section"
           className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-300 text-slate-700 transition-colors hover:bg-slate-100"
         >
           <ArrowIcon direction="right" />
