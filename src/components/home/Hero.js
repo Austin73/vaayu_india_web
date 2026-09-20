@@ -36,32 +36,32 @@ export default function Hero() {
 
   const features = [
     {
-      icon: AirVent,
-      label: "Compressor based unique cooling tech",
-    },
-    {
-      icon: ZapOff,
-      label: "Reduce Power Consumption by 80%",
-    },
-    {
-      icon: Droplets,
-      label: "Reduce Water Consumption by 60%",
-    },
-    {
-      icon: Wind,
-      label: "100% Fresh Air",
-    },
-    {
-      icon: Thermometer,
+      icon: "/images/home/icons/temp-drop.svg",
       label: "20° temperature drop",
     },
     {
-      icon: Leaf,
-      label: "Eco friendly",
+      icon: "/images/home/icons/power.svg",
+      label: "Reduce Power Consumption by 80%",
     },
     {
-      icon: Award,
+      icon: "/images/home/icons/water.svg",
+      label: "Reduce Water Consumption by 60%",
+    },
+    {
+      icon: "/images/home/icons/fresh-air.svg",
+      label: "Fresh Air",
+    },
+    {
+      icon: "/images/home/icons/carbon-credits.svg",
       label: "Generates Carbon Credits",
+    },
+    {
+      icon: "/images/home/icons/eco.svg",
+      label: "Eco Freindly",
+    },
+    {
+      icon: "/images/home/icons/tank-cleaning.svg",
+      label: "Tank Cleaning mode",
     },
   ];
 
@@ -83,11 +83,11 @@ export default function Hero() {
         transition={{ duration: 1 }}
         variants={animationVariants}
       >
-        <h1 className="font-500 text-[15px] leading-tight text-black sm:text-[23px] lg:text-[41px]">
-          Smart Air Cooling System that
+        <h2 className="mb-4 ml-10 text-4xl leading-tight font-bold text-black sm:text-[23px] lg:text-[41px]">
+          Smart Air Cooling Systems That
           <br />
-          Cuts Energy Cost by Up to 80%
-        </h1>
+          Cut Energy Costs by Up to 80%
+        </h2>
       </motion.div>
 
       {/* Carbon Watch */}
@@ -123,7 +123,13 @@ export default function Hero() {
           >
             {/* Icon */}
             <div className="text-primary grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white">
-              <Icon size={28} strokeWidth={2} />
+              {typeof Icon === "string" ? (
+                <div className="relative h-7 w-7">
+                  <Image src={Icon} alt={label} fill className="object-contain" />
+                </div>
+              ) : (
+                <Icon size={28} strokeWidth={2} />
+              )}
             </div>
 
             {/* Text */}
