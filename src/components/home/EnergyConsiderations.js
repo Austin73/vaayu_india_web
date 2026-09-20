@@ -38,10 +38,13 @@ export default function EnergyConsiderations() {
           transition={{ duration: 0.8 }}
         >
           <span className="block text-[clamp(1.5rem,3.6vw,3rem)]">
-            Patented Cooling Technology for
+           <h2 className="mb-4 text-4xl font-bold text-black"> Patented Cooling Technology for</h2>
           </span>
           <span className="block text-[clamp(1.5rem,3.6vw,3rem)]">
-            Industrial &amp; Commercial Spaces
+            <h2 className="mb-4 text-4xl font-bold text-black">
+              {" "}
+              Industrial &amp; Commercial Spaces
+            </h2>
           </span>
         </motion.h2>
 
