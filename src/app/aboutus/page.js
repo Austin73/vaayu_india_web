@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* <QuoteSection />
       <MissionVision /> */}
       {/* <Roadmap /> */}
-      <Leadership />
+      {/* <Leadership /> */}
       <CallToAction />
     </div>
   );
