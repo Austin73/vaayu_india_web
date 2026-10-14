@@ -36,32 +36,32 @@ export default function Hero() {
 
   const features = [
     {
-      icon: "/images/home/icons/temp-drop.svg",
+      icon: "/images/home/icons/01-temperature-drop.svg",
       label: "20° temperature drop",
     },
     {
-      icon: "/images/home/icons/power.svg",
-      label: "Reduce Power Consumption by 80%",
+      icon: "/images/home/icons/02-energy-saving.svg",
+      label: "Save 80% Energy",
     },
     {
-      icon: "/images/home/icons/water.svg",
-      label: "Reduce Water Consumption by 60%",
+      icon: "/images/home/icons/03-water-saving.svg",
+      label: "Save 60% Water",
     },
     {
-      icon: "/images/home/icons/fresh-air.svg",
-      label: "Fresh Air",
+      icon: "/images/home/icons/04-fresh-air.svg",
+      label: "100% Fresh Air",
     },
     {
-      icon: "/images/home/icons/carbon-credits.svg",
-      label: "Generates Carbon Credits",
+      icon: "/images/home/icons/05-carbon-credits.svg",
+      label: "Provides Carbon Credits",
     },
     {
-      icon: "/images/home/icons/eco.svg",
-      label: "Eco Freindly",
+      icon: "/images/home/icons/06-green-technology.svg",
+      label: "Green Technology",
     },
     {
-      icon: "/images/home/icons/tank-cleaning.svg",
-      label: "Tank Cleaning mode",
+      icon: "/images/home/icons/07-no-heat-emission.svg",
+      label: "No Heat Emission",
     },
   ];
 
@@ -124,7 +124,7 @@ export default function Hero() {
             {/* Icon */}
             <div className="text-primary grid h-16 w-16 shrink-0 place-items-center rounded-full bg-white">
               {typeof Icon === "string" ? (
-                <div className="relative h-7 w-7">
+                <div className="relative h-11 w-11">
                   <Image src={Icon} alt={label} fill className="object-contain" />
                 </div>
               ) : (

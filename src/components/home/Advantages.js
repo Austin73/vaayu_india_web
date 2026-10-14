@@ -129,8 +129,21 @@ export default function Advantages() {
   };
 
   return (
-    <section className="bg-white px-6 py-20 md:px-12">
+    <section className="relative overflow-hidden py-12 md:py-16">
       <div className="mx-auto mb-12 max-w-6xl">
+        <h2 className="mb-4 text-4xl font-bold text-black">Why Choose Vaayu?</h2>
+      </div>
+
+      <div className="mx-auto max-w-[1100px] px-4">
+        <Image
+          src="/images/home/advantages/why-choose-vaayu.jpeg"
+          alt="Why Choose Vaayu?"
+          width={1500}
+          height={900}
+          className="h-auto w-full"
+        />
+      </div>
+      {/* <div className="mx-auto mb-12 max-w-6xl">
         <h2 className="mb-4 text-4xl font-bold text-black">Why Choose Vaayu?</h2>
         <p className="text-xl text-black">The Smart and Sustainable Choice.</p>
       </div>
@@ -148,9 +161,9 @@ export default function Advantages() {
                 handleRevealClick(index);
                 handleReadMoreClick(index, e);
               }}
-            >
-              {/* Overlay covering the entire card */}
-              {/* <motion.div
+            > */}
+      {/* Overlay covering the entire card */}
+      {/* <motion.div
                 className="absolute inset-0 z-10 flex flex-col items-center justify-center rounded-lg bg-black"
                 initial={{ clipPath: "circle(100% at 50% 50%)", opacity: 0.95 }}
                 animate={{
@@ -162,8 +175,8 @@ export default function Advantages() {
                 <h3 className="px-4 text-center text-lg font-bold text-white">{adv.title}</h3>
               </motion.div> */}
 
-              {/* Card content */}
-              <div className="relative z-0 p-6">
+      {/* Card content */}
+      {/* <div className="relative z-0 p-6">
                 <Image
                   src={adv.image}
                   alt={adv.title}
@@ -188,9 +201,9 @@ export default function Advantages() {
                 </div>
               </div>
             </motion.div>
-          );
-        })}
-      </div>
+          ); */}
+      {/* })}
+      </div> */}
     </section>
   );
 }
