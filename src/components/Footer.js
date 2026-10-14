@@ -10,6 +10,16 @@ export default function Footer() {
   const certificationImages = [
     {
       id: "1",
+      path: "/images/certifications/ce.png",
+      alt: "CE Certified",
+    },
+    {
+      id: "1",
+      path: "/images/certifications/group.png",
+      alt: "Group",
+    },
+    {
+      id: "1",
       path: "/images/certifications/make-in-india.png",
       alt: "Make in India",
     },
